@@ -11,3 +11,7 @@ Content-Type: application/json
     "outdoor_places_visited": ["Park", "Beach"],
     "other_preferences": ["Vegan", "Non-Smoking"]
 }
+
+### Get User Preferences Request
+GET http://127.0.0.1:5000/user/get_preferences/6711cf78b8e847a1317a4d4f
+Content-Type: application/json
