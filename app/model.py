@@ -1,5 +1,8 @@
+import logging
 from werkzeug.security import generate_password_hash, check_password_hash
 
+# Configure logging
+logging.basicConfig(level=logging.DEBUG)
 class User:
     def __init__(self, db):
         self.db = db
@@ -34,7 +37,6 @@ class User:
 
     # Find user by _id for authentication
     def find_user_by_id(self, user_id):
-        print(user_id)
         return self.db.users_auth.find_one({'_id': user_id})
 
     # Check if the password matches
