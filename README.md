@@ -38,7 +38,3 @@ Then install all the dependencies with the following command
 ## Run with flask command
 
 > `flask run`
-
-# Project corrections
-
-- [ ] get popular restaurant not working for id U1067, therefore check for all users if popular restaurants are working or not
