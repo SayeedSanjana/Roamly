@@ -1,17 +1,34 @@
 ### Update Preferences Request### Update Preferences Request
-POST http://127.0.0.1:5000/user/update_profile/6711cf78b8e847a1317a4d4f
+POST http://127.0.0.1:5000/user/update_profile/67135589635c8379c2822b39
 Content-Type: application/json
 
 {
+    
     "cuisines": ["Italian", "Mexican"],
     "indoor_activities": ["Reading", "Gaming"],
     "outdoor_activities": ["Hiking", "Cycling"],
     "restaurants_visited": ["Olive Garden", "Chipotle"],
     "indoor_places_visited": ["Library", "Museum"],
     "outdoor_places_visited": ["Park", "Beach"],
+    "preferred_meal_time": [
+        {
+        "meal": "breakfast",
+        "time": "8:00 AM - 10:00 AM"
+        },
+        {
+        "meal": "lunch",
+        "time": "12:00 PM"
+        },
+        {
+        "meal": "dinner",
+        "time": "8:00 PM"
+        }
+    ],
     "other_preferences": ["Vegan", "Non-Smoking"]
+
+
 }
 
 ### Get User Preferences Request
-GET http://127.0.0.1:5000/user/get_preferences/6711cf78b8e847a1317a4d4f
+GET http://127.0.0.1:5000/user/get_preferences/6712b4fee2f401ea5483b949
 Content-Type: application/json

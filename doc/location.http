@@ -1,0 +1,25 @@
+### Set manual location
+POST http://127.0.0.1:5000/location/set_manual_location/67135589635c8379c2822b39
+Content-Type: application/json
+
+{
+    "latitude": 34.052235,
+    "longitude": -118.243683,
+    "street": "123 Main St",
+    "city": "Los Angeles",
+    "state": "CA",
+    "country": "USA",
+    "postal_code": "90012"
+}
+
+
+### Current Location
+POST http://127.0.0.1:5000/location/set_current_location
+Content-Type: application/json
+
+{
+    "latitude": 40.712776,
+    "longitude": -74.005974,
+    "user_id": "67135589635c8379c2822b39"
+} 
+
