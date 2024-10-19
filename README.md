@@ -1,4 +1,4 @@
-# Raomly
+# Roamly
 
 Context Aware Intelligent Travel Companion
 
