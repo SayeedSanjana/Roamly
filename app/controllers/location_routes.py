@@ -42,14 +42,12 @@ def create_location_routes(db):
 
     @location_routes.route('/set_manual_location/<user_id>', methods=['POST'])
     def set_manual_location(user_id):
-        print("Route reached")  # This should print when the route is hit
         """
         Allows the user to manually set their location.
         """
         try:
             data = request.get_json()
-            print(f"Received data: {data}")  # Print the incoming data
-
+            
             if not data:
                 return jsonify({"error": "Invalid JSON or missing request body"}), 400
 

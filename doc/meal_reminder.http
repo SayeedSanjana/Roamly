@@ -1,0 +1,30 @@
+### Create Meal Reminders
+POST http://127.0.0.1:5000/meal/reminders/67135589635c8379c2822b39
+Content-Type: application/json
+
+{
+    "action": "create"
+}
+
+### Snooze Reminder
+POST http://127.0.0.1:5000/meal/reminders/67135589635c8379c2822b39
+Content-Type: application/json
+
+{
+    "action": "snooze",
+    "reminder_id": "reminder_id_value",  # Replace with actual reminder_id
+    "snooze_duration": 15
+}
+
+### Dismiss Reminder
+POST http://127.0.0.1:5000/meal/reminders/67135589635c8379c2822b39
+Content-Type: application/json
+
+{
+    "action": "dismiss",
+    "reminder_id": "reminder_id_value"  # Replace with actual reminder_id
+}
+
+### Get Pending Reminders
+GET http://127.0.0.1:5000/meal/get_reminders/67135589635c8379c2822b39
+Content-Type: application/json
