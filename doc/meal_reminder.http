@@ -9,12 +9,12 @@ Content-Type: application/json
 
 ### Snooze Reminder
 POST http://127.0.0.1:5000/meal/reminders
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyOTQxNTEzNSwianRpIjoiMzAyYTQ4ZTAtY2VjNy00MjJlLWI2MzEtYzE2Y2JlMzc0ZjJlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY3MTM1NTg5NjM1YzgzNzljMjgyMmIzOSIsIm5iZiI6MTcyOTQxNTEzNSwiY3NyZiI6IjZmNTc4YzJiLWI1M2YtNDZkNy05NTUyLWM4MGEyMjA1YmFlOCIsImV4cCI6MTcyOTUwMTUzNX0.A0uK9cUU8gNZoSO8LQyv_5Zy6UwIW5FW8sEdp0L0HVA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyOTQyMjQ0NSwianRpIjoiOGFjOTJmZWItODU3Ni00N2NiLTlhN2YtNzNiZDgxMmZkNGI0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY3MTM1NTg5NjM1YzgzNzljMjgyMmIzOSIsIm5iZiI6MTcyOTQyMjQ0NSwiY3NyZiI6IjdjNmNjNGNmLWQ1NzktNGFiNy1hYWJlLTI3OGU0YzBkMGQ0ZiIsImV4cCI6MTcyOTUwODg0NX0.xZwKVDmkzh4ZLkT8VllTud7O47urXyo_08zn5Y7Upag
 Content-Type: application/json
 
 {
     "action": "snooze",
-    "reminder_id": "6714bf610fafda75103e47c4",
+    "reminder_id": "6714d05d5eb64346f55fc0be",
     "snooze_duration": 15
 }
 
@@ -25,7 +25,7 @@ Content-Type: application/json
 
 {
     "action": "dismiss",
-    "reminder_id": "6714bf610fafda75103e47c4"
+    "reminder_id": "6714d05d5eb64346f55fc0be"
 }
 
 ### Get Pending Reminders
