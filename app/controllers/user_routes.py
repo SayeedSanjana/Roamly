@@ -1,4 +1,3 @@
-# app/controllers/user_routes.py
 from bson import ObjectId
 from flask import Blueprint, request, jsonify
 from app.services.user_service import UserService
@@ -14,8 +13,7 @@ def create_user_routes(db):
         Expects: JSON body with fields like 'cuisines', 'indoor_activities', etc.
         """
         try:
-            # Convert user_id to ObjectId to query MongoDB
-            user_id = ObjectId(user_id)
+            user_id = ObjectId(user_id)  # Convert user_id to ObjectId
         except Exception as e:
             return jsonify({"error": "Invalid user ID format"}), 400
 
@@ -33,12 +31,10 @@ def create_user_routes(db):
         Fetches the preferences of a user by their ID.
         """
         try:
-            # Convert user_id to ObjectId to query MongoDB
-            user_id = ObjectId(user_id)
+            user_id = ObjectId(user_id)  # Convert user_id to ObjectId
         except Exception as e:
             return jsonify({"error": "Invalid user ID format"}), 400
 
-        # Get the preferences using the UserService
         response, status_code = user_service.get_preferences(user_id)
         return jsonify(response), status_code
 
