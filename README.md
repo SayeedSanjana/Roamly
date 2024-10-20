@@ -38,3 +38,18 @@ Then install all the dependencies with the following command
 ## Run with flask command
 
 > `flask run`
+
+## Configuration Setup
+
+To set up your local configuration, follow these steps:
+
+1. **Create a `config.py` file**:
+
+   - Copy the provided `config_template.py` file and rename it to `config.py` in the root of the project directory.
+   - This file contains placeholders for sensitive configuration details (e.g., `SECRET_KEY`, `MONGO_URI`).
+
+   Example command:
+
+   ```bash
+   cp config_template.py config.py
+   ```

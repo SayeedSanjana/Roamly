@@ -1,4 +1,3 @@
-# app/controllers/auth_routes.py
 from flask import Blueprint, request, jsonify
 from app.services.auth_service import AuthService
 
@@ -22,7 +21,7 @@ def create_auth_routes(db):
     @auth_routes.route('/login', methods=['POST'])
     def login():
         """
-        Handles user login.
+        Handles user login.FLASK
         Expects: JSON body with 'email' and 'password'.
         """
         data = request.get_json()

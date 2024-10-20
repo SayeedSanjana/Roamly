@@ -3,11 +3,14 @@ from flask import Flask
 from flask_cors import CORS
 from pymongo import MongoClient
 from app.config import Config
+from flask_jwt_extended import JWTManager # type: ignore
 from app.utils.scheduler import start_scheduler  # Import the scheduler function
 
 def create_app():
     app = Flask(__name__)
     CORS(app)
+    # Setup JWT
+    jwt = JWTManager(app)
 
     # Load configuration
     app.config.from_object(Config)

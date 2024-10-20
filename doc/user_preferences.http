@@ -1,9 +1,8 @@
-### Update Preferences Request### Update Preferences Request
-POST http://127.0.0.1:5000/user/update_profile/67135589635c8379c2822b39
+POST http://127.0.0.1:5000/user/update_profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyOTQxNTEzNSwianRpIjoiMzAyYTQ4ZTAtY2VjNy00MjJlLWI2MzEtYzE2Y2JlMzc0ZjJlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY3MTM1NTg5NjM1YzgzNzljMjgyMmIzOSIsIm5iZiI6MTcyOTQxNTEzNSwiY3NyZiI6IjZmNTc4YzJiLWI1M2YtNDZkNy05NTUyLWM4MGEyMjA1YmFlOCIsImV4cCI6MTcyOTUwMTUzNX0.A0uK9cUU8gNZoSO8LQyv_5Zy6UwIW5FW8sEdp0L0HVA
 Content-Type: application/json
 
 {
-    
     "cuisines": ["Italian", "Mexican"],
     "indoor_activities": ["Reading", "Gaming"],
     "outdoor_activities": ["Hiking", "Cycling"],
@@ -12,23 +11,22 @@ Content-Type: application/json
     "outdoor_places_visited": ["Park", "Beach"],
     "preferred_meal_time": [
         {
-        "meal": "breakfast",
-        "time": "8:00 AM - 10:00 AM"
+            "meal": "breakfast",
+            "time": "8:00 AM - 10:00 AM"
         },
         {
-        "meal": "lunch",
-        "time": "12:00 PM"
+            "meal": "lunch",
+            "time": "12:00 PM"
         },
         {
-        "meal": "dinner",
-        "time": "8:00 PM"
+            "meal": "dinner",
+            "time": "8:00 PM"
         }
     ],
-    "other_preferences": ["Vegan", "Non-Smoking"]
-
-
+    "other_preferences": ["Vegan", "Non-Smoking","Dancing"]
 }
 
 ### Get User Preferences Request
-GET http://127.0.0.1:5000/user/get_preferences/6712b4fee2f401ea5483b949
+GET http://127.0.0.1:5000/user/get_preferences
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyOTQxNTEzNSwianRpIjoiMzAyYTQ4ZTAtY2VjNy00MjJlLWI2MzEtYzE2Y2JlMzc0ZjJlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY3MTM1NTg5NjM1YzgzNzljMjgyMmIzOSIsIm5iZiI6MTcyOTQxNTEzNSwiY3NyZiI6IjZmNTc4YzJiLWI1M2YtNDZkNy05NTUyLWM4MGEyMjA1YmFlOCIsImV4cCI6MTcyOTUwMTUzNX0.A0uK9cUU8gNZoSO8LQyv_5Zy6UwIW5FW8sEdp0L0HVA
 Content-Type: application/json

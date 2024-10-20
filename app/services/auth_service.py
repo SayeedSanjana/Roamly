@@ -1,8 +1,9 @@
-# app/services/auth_service.py
 from werkzeug.security import generate_password_hash, check_password_hash
 from app.models.user_schema import UserSchema
 from bson import ObjectId
 from marshmallow import ValidationError
+from flask_jwt_extended import create_access_token # type: ignore
+import datetime
 
 class AuthService:
     def __init__(self, db):
@@ -50,9 +51,6 @@ class AuthService:
         return {"message": "User created successfully", "user_id": str(user_id)}, 201
 
     def login(self, data):
-        """
-        Authenticates a user by checking email and password.
-        """
         email = data.get('email')
         password = data.get('password')
 
@@ -68,4 +66,13 @@ class AuthService:
         if not check_password_hash(user['password'], password):
             return {"error": "Invalid credentials"}, 401
 
-        return {"message": "Login successful", "user_id": str(user['_id'])}, 200
+        # Create JWT access token
+        access_token = create_access_token(identity=str(user['_id']), expires_delta=datetime.timedelta(days=1))
+
+
+        return {
+            "message": "Login successful",
+            "access_token": access_token,  # Ensure the token is returned in the response
+            "user_id": str(user['_id'])
+        }, 200
+

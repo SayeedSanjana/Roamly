@@ -1,13 +1,16 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, jsonify, request
+from flask_jwt_extended import jwt_required, get_jwt_identity
 from bson import ObjectId
+
 from app.services.meal_service import MealService
 
 def create_meal_routes(db):
     meal_routes = Blueprint('meal', __name__)
     meal_service = MealService(db)
 
-    @meal_routes.route('/reminders/<user_id>', methods=['POST'])
-    def handle_meal_reminders(user_id):
+    @meal_routes.route('/reminders', methods=['POST'])
+    @jwt_required()  # Protect the route with JWT
+    def handle_meal_reminders():
         """
         Handles creating meal reminders and managing reminder actions (snooze, dismiss).
         POST method with 'action' parameter determines whether to create reminders, snooze, or dismiss.
@@ -15,12 +18,16 @@ def create_meal_routes(db):
         try:
             data = request.get_json()
             action = data.get("action", "create")  # Default action is 'create'
-            
+
+            # Get the user ID from the JWT token
+            user_id = get_jwt_identity()
+            user_id = ObjectId(user_id)  # Convert to ObjectId
+
             if action == "create":
                 # Create meal reminders based on user's meal preferences
                 response, status_code = meal_service.create_meal_reminders(user_id)
                 return jsonify(response), status_code
-            
+
             elif action in ["snooze", "dismiss"]:
                 # Handle snooze or dismiss actions for a reminder
                 reminder_id = data.get("reminder_id")
@@ -32,19 +39,24 @@ def create_meal_routes(db):
                 # Handle the reminder action
                 response, status_code = meal_service.handle_reminder_action(reminder_id, action, snooze_duration)
                 return jsonify(response), status_code
-            
+
             else:
                 return jsonify({"error": "Invalid action"}), 400
 
         except Exception as e:
             return jsonify({"error": f"An error occurred: {str(e)}"}), 500
 
-    @meal_routes.route('/get_reminders/<user_id>', methods=['GET'])
-    def get_reminders(user_id):
+    @meal_routes.route('/get_reminders', methods=['GET'])
+    @jwt_required()  # Protect the route with JWT
+    def get_reminders():
         """
-        Fetch all pending or upcoming reminders for the user.
+        Fetch all pending or upcoming reminders for the logged-in user.
         """
         try:
+            # Get the user ID from the JWT token
+            user_id = get_jwt_identity()
+            user_id = ObjectId(user_id)  # Convert to ObjectId
+
             response, status_code = meal_service.get_pending_reminders(user_id)
             return jsonify(response), status_code
         except Exception as e:

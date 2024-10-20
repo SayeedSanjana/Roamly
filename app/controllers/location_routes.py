@@ -1,17 +1,15 @@
-from flask import Blueprint, request, jsonify
 from bson import ObjectId
-from bson.errors import InvalidId
+from flask import Blueprint, jsonify, request
+from flask_jwt_extended import jwt_required, get_jwt_identity
+
 from app.services.location_service import LocationService
-# import logging
-
-# logging.basicConfig(level=logging.DEBUG)  # Set the logging level to DEBUG for detailed logs
-
 
 def create_location_routes(db):
     location_routes = Blueprint('location', __name__)
     location_service = LocationService(db)
 
     @location_routes.route('/set_current_location', methods=['POST'])
+    @jwt_required()  # Protect the route with JWT
     def set_current_location():
         """
         Sets the user's current location based on automatic detection.
@@ -23,16 +21,13 @@ def create_location_routes(db):
 
             latitude = data.get('latitude')
             longitude = data.get('longitude')
-            user_id = data.get('user_id')
+            user_id = get_jwt_identity()  # Get user ID from the JWT
 
-            if not latitude or not longitude or not user_id:
-                return jsonify({"error": "Latitude, longitude, and user_id are required"}), 400
+            if not latitude or not longitude:
+                return jsonify({"error": "Latitude and longitude are required"}), 400
 
-            # Ensure the user_id is a valid ObjectId
-            try:
-                user_id = ObjectId(user_id)
-            except InvalidId:
-                return jsonify({"error": "Invalid user_id format"}), 400
+            # Convert user_id to ObjectId
+            user_id = ObjectId(user_id)
 
             response, status_code = location_service.set_current_location(user_id, latitude, longitude)
             return jsonify(response), status_code
@@ -40,22 +35,19 @@ def create_location_routes(db):
         except Exception as e:
             return jsonify({"error": f"An error occurred: {str(e)}"}), 500
 
-    @location_routes.route('/set_manual_location/<user_id>', methods=['POST'])
-    def set_manual_location(user_id):
+    @location_routes.route('/set_manual_location', methods=['POST'])
+    @jwt_required()  # Protect the route with JWT
+    def set_manual_location():
         """
         Allows the user to manually set their location.
         """
         try:
             data = request.get_json()
-            
             if not data:
                 return jsonify({"error": "Invalid JSON or missing request body"}), 400
 
-            # Ensure the user_id is a valid ObjectId
-            try:
-                user_id = ObjectId(user_id)
-            except InvalidId:
-                return jsonify({"error": "Invalid user_id format"}), 400
+            user_id = get_jwt_identity()  # Get user ID from the JWT
+            user_id = ObjectId(user_id)   # Convert to ObjectId
 
             response, status_code = location_service.set_manual_location(user_id, data)
             return jsonify(response), status_code

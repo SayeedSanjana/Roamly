@@ -1,5 +1,6 @@
 ### Create Meal Reminders
-POST http://127.0.0.1:5000/meal/reminders/67135589635c8379c2822b39
+POST http://127.0.0.1:5000/meal/reminders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyOTQxNTEzNSwianRpIjoiMzAyYTQ4ZTAtY2VjNy00MjJlLWI2MzEtYzE2Y2JlMzc0ZjJlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY3MTM1NTg5NjM1YzgzNzljMjgyMmIzOSIsIm5iZiI6MTcyOTQxNTEzNSwiY3NyZiI6IjZmNTc4YzJiLWI1M2YtNDZkNy05NTUyLWM4MGEyMjA1YmFlOCIsImV4cCI6MTcyOTUwMTUzNX0.A0uK9cUU8gNZoSO8LQyv_5Zy6UwIW5FW8sEdp0L0HVA
 Content-Type: application/json
 
 {
@@ -7,7 +8,8 @@ Content-Type: application/json
 }
 
 ### Snooze Reminder
-POST http://127.0.0.1:5000/meal/reminders/67135589635c8379c2822b39
+POST http://127.0.0.1:5000/meal/reminders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyOTQxNTEzNSwianRpIjoiMzAyYTQ4ZTAtY2VjNy00MjJlLWI2MzEtYzE2Y2JlMzc0ZjJlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY3MTM1NTg5NjM1YzgzNzljMjgyMmIzOSIsIm5iZiI6MTcyOTQxNTEzNSwiY3NyZiI6IjZmNTc4YzJiLWI1M2YtNDZkNy05NTUyLWM4MGEyMjA1YmFlOCIsImV4cCI6MTcyOTUwMTUzNX0.A0uK9cUU8gNZoSO8LQyv_5Zy6UwIW5FW8sEdp0L0HVA
 Content-Type: application/json
 
 {
@@ -17,7 +19,8 @@ Content-Type: application/json
 }
 
 ### Dismiss Reminder
-POST http://127.0.0.1:5000/meal/reminders/67135589635c8379c2822b39
+POST http://127.0.0.1:5000/meal/reminders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyOTQxNTEzNSwianRpIjoiMzAyYTQ4ZTAtY2VjNy00MjJlLWI2MzEtYzE2Y2JlMzc0ZjJlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY3MTM1NTg5NjM1YzgzNzljMjgyMmIzOSIsIm5iZiI6MTcyOTQxNTEzNSwiY3NyZiI6IjZmNTc4YzJiLWI1M2YtNDZkNy05NTUyLWM4MGEyMjA1YmFlOCIsImV4cCI6MTcyOTUwMTUzNX0.A0uK9cUU8gNZoSO8LQyv_5Zy6UwIW5FW8sEdp0L0HVA
 Content-Type: application/json
 
 {
@@ -26,5 +29,6 @@ Content-Type: application/json
 }
 
 ### Get Pending Reminders
-GET http://127.0.0.1:5000/meal/get_reminders/67135589635c8379c2822b39
+GET http://127.0.0.1:5000/meal/get_reminders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyOTQxNTEzNSwianRpIjoiMzAyYTQ4ZTAtY2VjNy00MjJlLWI2MzEtYzE2Y2JlMzc0ZjJlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY3MTM1NTg5NjM1YzgzNzljMjgyMmIzOSIsIm5iZiI6MTcyOTQxNTEzNSwiY3NyZiI6IjZmNTc4YzJiLWI1M2YtNDZkNy05NTUyLWM4MGEyMjA1YmFlOCIsImV4cCI6MTcyOTUwMTUzNX0.A0uK9cUU8gNZoSO8LQyv_5Zy6UwIW5FW8sEdp0L0HVA
 Content-Type: application/json
