@@ -1,5 +1,5 @@
-# app/utils/scheduler.py
 from apscheduler.schedulers.background import BackgroundScheduler
+from apscheduler.schedulers import SchedulerNotRunningError
 from datetime import datetime
 
 def check_meal_reminders(db):
@@ -30,5 +30,14 @@ def start_scheduler(app, db):
     scheduler.add_job(func=lambda: check_meal_reminders(db), trigger="interval", minutes=1)
     scheduler.start()
 
-    # Shut down the scheduler when the app exits (note the 'exc' parameter)
-    app.teardown_appcontext(lambda exc: scheduler.shutdown())
+    # Shut down the scheduler when the app exits
+    @app.teardown_appcontext
+    def shutdown_scheduler(exc):
+        """
+        Shutdown the scheduler when the Flask app context is torn down.
+        """
+        if scheduler.running:
+            try:
+                scheduler.shutdown()
+            except SchedulerNotRunningError:
+                pass  # Ignore if the scheduler isn't running

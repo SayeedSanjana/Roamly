@@ -1,11 +1,28 @@
+from bson import ObjectId
+from marshmallow import Schema, fields, validates, ValidationError
+class ObjectIdField(fields.Field):
+    """
+    Custom field for MongoDB ObjectId validation.
+    """
 
-from marshmallow import Schema, fields, validate # type: ignore
+    def _deserialize(self, value, attr, data, **kwargs):
+        # Check if the value is a valid ObjectId
+        if not ObjectId.is_valid(value):
+            raise ValidationError(f"Invalid ObjectId: {value}")
+        return ObjectId(value)
+
+    def _serialize(self, value, attr, obj, **kwargs):
+        # Serialize ObjectId as string
+        return str(value)
 class ReminderSchema(Schema):
-    _id = fields.String(required=True)
-    user_id = fields.String(required=True)
-    meal = fields.String(required=True, validate=validate.OneOf(["breakfast", "lunch", "dinner"]))
-    time = fields.String(required=True, validate=validate.Regexp(r"^\d{1,2}:\d{2} [APM]{2}$", 
-                error="Invalid time format. Example: '8:00 AM'"))
-    reminder_time = fields.DateTime(required=True)
-    reminder_message = fields.String(required=True)
-    status = fields.String(required=True, validate=validate.OneOf(["pending", "snoozed", "dismissed", "notified"]))
+    user_id = ObjectIdField(required=True)  # Custom ObjectId field
+    meal = fields.Str(required=True)
+    time = fields.Str(required=True)
+    reminder_time = fields.Str(required=True)
+    reminder_message = fields.Str(required=True)
+    status = fields.Str(required=True)
+
+    @validates('status')
+    def validate_status(self, status):
+        if status not in ['pending', 'snoozed', 'dismissed']:
+            raise ValidationError("Invalid status value")
