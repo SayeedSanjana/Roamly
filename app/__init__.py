@@ -3,6 +3,7 @@ from flask import Flask
 from flask_cors import CORS
 from pymongo import MongoClient
 from app.config import Config
+from app.utils.scheduler import start_scheduler  # Import the scheduler function
 
 def create_app():
     app = Flask(__name__)
@@ -26,5 +27,12 @@ def create_app():
     # Register the location routes blueprint
     from app.controllers.location_routes import create_location_routes
     app.register_blueprint(create_location_routes(db), url_prefix='/location')
+
+    # Register the time_context routes blueprint
+    from app.controllers.meal_routes import create_meal_routes
+    app.register_blueprint(create_meal_routes(db), url_prefix='/meal')
+
+    # Start the background scheduler
+    start_scheduler(app, db)  # Pass the app and db to the scheduler
 
     return app
