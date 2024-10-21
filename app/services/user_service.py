@@ -7,7 +7,8 @@ class UserService:
     def __init__(self, db):
         self.db = db
         self.preferences_schema = PreferencesSchema()
-
+     
+     #User preferences pdaed during user profile creation
     def update_preferences(self, user_id, data):
         """
         Updates user preferences after validating the data.
@@ -42,6 +43,7 @@ class UserService:
             return {"message": "Profile updated successfully"}, 200
         return {"error": "Failed to update profile"}, 500
 
+    #get all the preferences of the user
     def get_preferences(self, user_id):
         """
         Retrieves the preferences of a user.

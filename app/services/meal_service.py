@@ -7,7 +7,8 @@ class MealService:
     def __init__(self, db):
         self.db = db
         self.reminder_schema = ReminderSchema()
-
+    
+    #Meal reminder function
     def create_meal_reminders(self, user_id):
         """
         Creates reminders for the user's meals based on their preferences.
@@ -57,6 +58,7 @@ class MealService:
 
         return {"message": "Reminders created", "reminders": reminders}, 201
     
+    #Handle reminder dismiss,snooze,create
 
     def handle_reminder_action(self, reminder_id, action, snooze_duration=None):
         """

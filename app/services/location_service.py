@@ -11,7 +11,8 @@ class LocationService:
         self.db = db
         self.geolocator = Nominatim(user_agent="Roamly")
         self.location_schema = LocationSchema()
-
+    
+    #St the current location of the user automatically
     def set_current_location(self, user_id, latitude, longitude):
         """
         Automatically sets the user's current location.
@@ -46,7 +47,8 @@ class LocationService:
                 return {"error": "Unable to detect location"}, 500
         except Exception as e:
             return {"error": f"Internal server error: {str(e)}"}, 500
-
+    
+    #Set the location manuallu
     def set_manual_location(self, user_id, data):
         """
         Allows the user to manually set their location.

@@ -8,7 +8,8 @@ class AuthService:
     def __init__(self, db):
         self.db = db
         self.user_schema = UserSchema()
-
+    
+    #Signup Function
     def signup(self, data):
         """
         Registers a new user after validating the data.
@@ -23,7 +24,7 @@ class AuthService:
         if self.db.users_auth.find_one({"email": validated_data['email']}):
             return {"error": "User already exists"}, 400
 
-        # Hash the password and create the user
+        # Hash the password of the user and create the user
         hashed_password = generate_password_hash(validated_data['password'])
         user = {
             'name': validated_data['name'],
@@ -49,6 +50,7 @@ class AuthService:
 
         return {"message": "User created successfully", "user_id": str(user_id)}, 201
 
+    #Login function 
     def login(self, data):
         """
         Authenticates a user by checking email and password.
