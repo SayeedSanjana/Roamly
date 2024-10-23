@@ -30,5 +30,5 @@ Content-Type: application/json
 }
 
 ### Get User Preferences Request
-GET http://127.0.0.1:5000/user/get_preferences/6712b4fee2f401ea5483b949
+GET http://127.0.0.1:5000/user/get_preferences/67135589635c8379c2822b39
 Content-Type: application/json

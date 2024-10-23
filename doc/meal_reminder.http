@@ -12,7 +12,7 @@ Content-Type: application/json
 
 {
     "action": "snooze",
-    "reminder_id": "6714bf610fafda75103e47c4",
+    "reminder_id": "6714bf610fafda75103e47c5",
     "snooze_duration": 15
 }
 
@@ -22,7 +22,7 @@ Content-Type: application/json
 
 {
     "action": "dismiss",
-    "reminder_id": "6714bf610fafda75103e47c4"
+    "reminder_id": "6714bf610fafda75103e47c5"
 }
 
 ### Get Pending Reminders
