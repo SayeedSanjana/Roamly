@@ -12,7 +12,14 @@ def check_meal_reminders(db):
     # Fetch all 'pending' reminders and send notifications if it's time
     reminders = db.meal_reminders.find({"status": "pending"})
     for reminder in reminders:
-        if reminder['reminder_time'] <= current_time:
+        # Convert the 'reminder_time' from string to a datetime object
+        try:
+            reminder_time = datetime.strptime(reminder['reminder_time'], "%Y-%m-%d %H:%M:%S")
+        except ValueError:
+            print(f"Invalid date format for reminder: {reminder['reminder_time']}")
+            continue
+
+        if reminder_time <= current_time:
             print(f"Sending reminder for {reminder['meal']}: {reminder['reminder_message']}")
             # Trigger notification (e.g., push notification or email)
             db.meal_reminders.update_one(
