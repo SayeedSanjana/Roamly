@@ -35,6 +35,11 @@ def create_app():
     from app.controllers.meal_routes import create_meal_routes
     app.register_blueprint(create_meal_routes(db), url_prefix='/meal')
 
+    # Register restaurant routes
+    from app.controllers.restaurant_scrapper_routes import create_restaurant_routes
+    app.register_blueprint(create_restaurant_routes(), url_prefix='/restaurants')
+
+
     # Start the background scheduler
     start_scheduler(app, db)  # Pass the app and db to the scheduler
 
