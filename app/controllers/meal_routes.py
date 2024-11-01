@@ -61,5 +61,26 @@ def create_meal_routes(db):
             return jsonify(response), status_code
         except Exception as e:
             return jsonify({"error": f"An error occurred: {str(e)}"}), 500
+        
+
+    @meal_routes.route('/most_recent_reminder', methods=['GET'])
+    @jwt_required()  # Protect the route with JWT
+    def get_most_recent_reminder():
+        """
+        Fetch the most recent pending reminder for the logged-in user.
+        """
+        try:
+            # Get the user ID from the JWT token
+            user_id = get_jwt_identity()
+            user_id = ObjectId(user_id)  # Convert to ObjectId
+
+            # Get the most recent reminder
+            response, status_code = meal_service.get_most_recent_reminder(user_id)
+            return jsonify(response), status_code
+        except Exception as e:
+            return jsonify({"error": f"An error occurred: {str(e)}"}), 500
 
     return meal_routes
+
+    return meal_routes
+

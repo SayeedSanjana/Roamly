@@ -90,24 +90,91 @@ class MealService:
         else:
             return {"error": "Invalid action"}, 400
 
+    # def get_pending_reminders(self, user_id):
+    #     """
+    #     Retrieves all pending reminders for the user.
+    #     """
+    #     try:
+    #         reminders = self.db.meal_reminders.find({
+    #             "user_id": ObjectId(user_id),
+    #             "status": "pending"
+    #         })
+
+    #         reminders_list = []
+    #         for reminder in reminders:
+    #             reminder["_id"] = str(reminder["_id"])  # Convert ObjectId to string
+    #             reminder["user_id"] = str(reminder["user_id"])  # Convert user_id to string
+    #             reminders_list.append(reminder)
+
+    #         if reminders_list:
+    #             return {"reminders": reminders_list}, 200
+
+    #         return {"message": "No pending reminders found"}, 200
+        
+    #     except Exception as e:
+    #         return {"error": f"An error occurred: {str(e)}"}, 500
     def get_pending_reminders(self, user_id):
+            """
+            Retrieves all pending reminders for the user.
+            """
+            try:
+                # Update snoozed reminders that should transition back to pending
+                self.update_snoozed_reminders()
+
+                reminders = self.db.meal_reminders.find({
+                    "user_id": ObjectId(user_id),
+                    "status": "pending"
+                })
+
+                reminders_list = []
+                for reminder in reminders:
+                    reminder["_id"] = str(reminder["_id"])  # Convert ObjectId to string
+                    reminder["user_id"] = str(reminder["user_id"])  # Convert user_id to string
+                    reminders_list.append(reminder)
+
+                if reminders_list:
+                    return {"reminders": reminders_list}, 200
+
+                return {"message": "No pending reminders found"}, 200
+            
+            except Exception as e:
+                return {"error": f"An error occurred: {str(e)}"}, 500
+
+    def update_snoozed_reminders(self):
         """
-        Retrieves all pending reminders for the user.
+        Check for snoozed reminders where the snooze time has passed and update them to pending.
+        """
+        now = datetime.now()
+        snoozed_reminders = self.db.meal_reminders.find({
+            "status": "snoozed",
+            "reminder_time": {"$lte": now.strftime("%Y-%m-%dT%H:%M:%S")}
+        })
+
+        for reminder in snoozed_reminders:
+            self.db.meal_reminders.update_one(
+                {"_id": reminder["_id"]},
+                {"$set": {"status": "pending"}}
+            )
+
+    def get_most_recent_reminder(self, user_id):
+        """
+        Retrieves the most recent reminder for the user.
         """
         try:
+            # Fetch all pending reminders
             reminders = self.db.meal_reminders.find({
                 "user_id": ObjectId(user_id),
                 "status": "pending"
             })
 
-            reminders_list = []
-            for reminder in reminders:
-                reminder["_id"] = str(reminder["_id"])  # Convert ObjectId to string
-                reminder["user_id"] = str(reminder["user_id"])  # Convert user_id to string
-                reminders_list.append(reminder)
-
+            # Convert reminders to a list and sort by reminder_time in ascending order
+            reminders_list = list(reminders)
             if reminders_list:
-                return {"reminders": reminders_list}, 200
+                reminders_list.sort(key=lambda x: datetime.strptime(x["reminder_time"], "%Y-%m-%dT%H:%M:%S"))
+                most_recent_reminder = reminders_list[0]
+                most_recent_reminder["_id"] = str(most_recent_reminder["_id"])  # Convert ObjectId to string
+                most_recent_reminder["user_id"] = str(most_recent_reminder["user_id"])  # Convert user_id to string
+                return {"reminder": most_recent_reminder}, 200
 
             return {"message": "No pending reminders found"}, 200
         
