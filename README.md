@@ -63,7 +63,7 @@ To set up your local configuration, follow these steps:
 
 ## Run the following command
 
-python/app/fetch_indoor_activities.py
-python/app/fetch_outdoor_activites.py
-python/app/fetch_restaurants.py
-python/app/generate_dummy_user_data.py
+1. python/app/fetch_indoor_activities.py
+2. python/app/fetch_outdoor_activites.py
+3. python/app/fetch_restaurants.py
+4. python/app/generate_dummy_user_data.py
