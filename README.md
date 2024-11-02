@@ -53,3 +53,17 @@ To set up your local configuration, follow these steps:
    ```bash
    cp config_template.py config.py
    ```
+
+## Fetch restaurants, outdoor activities, indoor activities from YELP
+
+1. Login to YELP for developers
+2. Go to create App
+3. Generate YELP api key
+4. Change the YELP_API_KEY in the config.py file
+
+## Run the following command
+
+python/app/fetch_indoor_activities.py
+python/app/fetch_outdoor_activites.py
+python/app/fetch_restaurants.py
+python/app/generate_dummy_user_data.py
