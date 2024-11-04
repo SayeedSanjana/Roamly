@@ -1,5 +1,5 @@
 ####
-@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMDQ4ODUwNCwianRpIjoiOTIxOThlMTQtYTRlNC00OTkyLWI5NzEtMWI4NWQ2MDllOGE2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY3MTM1NTg5NjM1YzgzNzljMjgyMmIzOSIsIm5iZiI6MTczMDQ4ODUwNCwiY3NyZiI6IjA1MzM5MDczLTExYzctNGM2Ni04YWQxLWYyMWU1MWE1Y2U3YSIsImV4cCI6MTczMDU3NDkwNH0.CtgAokUMYQsW_YGjzhAhBy6lgTF9fkvEF9CYfMwxG2Y
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMDcwODMwOSwianRpIjoiNDYxNjY3NzUtM2QyOC00Yjk1LThlNGYtNTNmNWFhMjZmYWE2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY3Mjg4MzUzZTE4MDJjYTZmYmUxNGVlYiIsIm5iZiI6MTczMDcwODMwOSwiY3NyZiI6ImVhNGYzNDY4LWY0OTktNDA2Ni1hNTk3LTgyMTQ3ZTY3ZGRlOCIsImV4cCI6MTczMDc5NDcwOX0.lveFTdAq6JE-vnhttpakueVsVxt9A6bHyNmhj9dI0zY
 #####
 
 POST http://127.0.0.1:5000/user/update_profile 
@@ -10,9 +10,7 @@ Content-Type: application/json
     "cuisines": ["Italian", "Mexican"],
     "indoor_activities": ["Reading", "Gaming"],
     "outdoor_activities": ["Hiking", "Cycling"],
-    "restaurants_visited": ["Olive Garden", "Chipotle"],
-    "indoor_places_visited": ["Library", "Museum"],
-    "outdoor_places_visited": ["Park", "Beach"],
+    "visited_places": [],
     "preferred_meal_time": [
         {
             "meal": "breakfast",
@@ -27,10 +25,50 @@ Content-Type: application/json
             "time": "8:00 PM"
         }
     ],
-    "other_preferences": ["Vegan", "Non-Smoking","Dancing"]
+    "other_preferences": ["Vegan", "Non-Smoking"]
 }
+
 
 ### Get User Preferences Request
 GET http://127.0.0.1:5000/user/get_preferences
 Authorization: Bearer {{token}}
 Content-Type: application/json
+
+
+### Add visited places
+POST http://127.0.0.1:5000/user/add_visited_places
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "visited_places": [
+    {
+      "name": "Statue of Liberty",
+      "address": "New York, USA",
+      "category": "Monument"
+      
+    },
+    {
+      "name": "Great Wall of China",
+      "address": "Beijing, China",
+      "category": "Historical Site"
+    
+    },
+    {
+      "name": "Sydney Opera House",
+      "address": "Sydney, Australia",
+      "category": "Cultural Landmark"
+      
+    }
+    ]
+}
+
+### Rate a Place
+POST http://127.0.0.1:5000/user/rate_place
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "unique_id": "67288448271a9632df04b81b",
+  "rating": 4.5
+}
