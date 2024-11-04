@@ -8,33 +8,56 @@ def create_user_routes(db):
     user_service = UserService(db)
 
     @user_routes.route('/update_profile', methods=['POST'])
-    @jwt_required()  # Protect the route with JWT
+    @jwt_required()
     def update_profile():
-        """
-        Updates user profile preferences. Only allowed for logged-in users.
-        Expects: JSON body with fields like 'cuisines', 'indoor_activities', etc.
-        """
-        user_id = get_jwt_identity()  # Get user ID from JWT
-        user_id = ObjectId(user_id)   # Convert to ObjectId
+        user_id = get_jwt_identity()
+        user_id = ObjectId(user_id)
 
         data = request.get_json()
         if not data:
             return jsonify({"error": "No data provided"}), 400
 
-        # Pass the data to the UserService for processing
         response, status_code = user_service.update_preferences(user_id, data)
         return jsonify(response), status_code
 
     @user_routes.route('/get_preferences', methods=['GET'])
-    @jwt_required()  # Protect the route with JWT
+    @jwt_required()
     def get_preferences():
-        """
-        Fetches the preferences of a logged-in user by their ID.
-        """
-        user_id = get_jwt_identity()  # Get user ID from JWT
-        user_id = ObjectId(user_id)   # Convert to ObjectId
+        user_id = get_jwt_identity()
+        user_id = ObjectId(user_id)
 
         response, status_code = user_service.get_preferences(user_id)
+        return jsonify(response), status_code
+
+    @user_routes.route('/add_visited_places', methods=['POST'])
+    @jwt_required()
+    def add_visited_places():
+        user_id = get_jwt_identity()
+        user_id = ObjectId(user_id)
+
+        places = request.get_json().get('visited_places')
+        if not places or not isinstance(places, list):
+            return jsonify({"error": "An array of places is required"}), 400
+
+        response, status_code = user_service.add_visited_places(user_id, places)
+        return jsonify(response), status_code
+
+    @user_routes.route('/rate_place', methods=['POST'])
+    @jwt_required()
+    def rate_place():
+        user_id = get_jwt_identity()
+        user_id = ObjectId(user_id)
+
+        data = request.get_json()
+        unique_id = data.get('unique_id')
+        rating = data.get('rating')
+
+        # Check if unique_id is provided (mandatory) and rating is optional
+        if not unique_id:
+            return jsonify({"error": "Unique ID is required"}), 400
+
+        # Call the service method, passing the unique_id and rating
+        response, status_code = user_service.rate_place(user_id, unique_id, rating)
         return jsonify(response), status_code
 
     return user_routes

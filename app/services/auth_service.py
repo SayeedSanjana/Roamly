@@ -1,14 +1,16 @@
 from werkzeug.security import generate_password_hash, check_password_hash
 from app.models.user_schema import UserSchema
+from app.models.preferences_schema import PreferencesSchema
 from bson import ObjectId
 from marshmallow import ValidationError
-from flask_jwt_extended import create_access_token # type: ignore
+from flask_jwt_extended import create_access_token
 import datetime
 
 class AuthService:
     def __init__(self, db):
         self.db = db
         self.user_schema = UserSchema()
+        self.preferences_schema = PreferencesSchema()
 
     def signup(self, data):
         """
@@ -34,15 +36,13 @@ class AuthService:
 
         user_id = self.db.users_auth.insert_one(user).inserted_id
 
-        # Create an empty preferences record linked to this user_id
+        # Initialize the user preferences
         preferences = {
             'user_id': user_id,
             'cuisines': [],
             'indoor_activities': [],
             'outdoor_activities': [],
-            'restaurants_visited': [],
-            'indoor_places_visited': [],
-            'outdoor_places_visited': [],
+            'visited_places': [],
             'preferred_meal_time': [],
             'other_preferences': []
         }
@@ -69,10 +69,8 @@ class AuthService:
         # Create JWT access token
         access_token = create_access_token(identity=str(user['_id']), expires_delta=datetime.timedelta(days=1))
 
-
         return {
             "message": "Login successful",
-            "access_token": access_token,  # Ensure the token is returned in the response
+            "access_token": access_token,
             "user_id": str(user['_id'])
         }, 200
-
