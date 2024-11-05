@@ -6,7 +6,11 @@ from app.config import Config
 from flask_jwt_extended import JWTManager # type: ignore
 from app.utils.scheduler import start_scheduler  # Import the scheduler function
 
+# Initialize db as None at the module level
+db = None
+
 def create_app():
+    global db
     app = Flask(__name__)
     CORS(app)
     # Setup JWT
@@ -34,6 +38,11 @@ def create_app():
     # Register the time_context routes blueprint
     from app.controllers.meal_routes import create_meal_routes
     app.register_blueprint(create_meal_routes(db), url_prefix='/meal')
+
+    # Register data routes
+    from app.controllers.data_routes import create_data_routes
+    app.register_blueprint(create_data_routes(db), url_prefix='/data')
+
 
    
     # Start the background scheduler
