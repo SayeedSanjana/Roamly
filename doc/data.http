@@ -1,0 +1,3 @@
+### Load Data
+POST http://localhost:5000/data/load_data
+Content-Type: application/json

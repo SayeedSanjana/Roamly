@@ -9,23 +9,56 @@ class UserService:
 
     def update_preferences(self, user_id, data):
         try:
-            validated_data = self.preferences_schema.load(data)
+            # Validate the input data using your schema
+            validated_data = self.preferences_schema.load(data, partial=True)
+
+            # Prepare the update operations
+            update_operations = {}
+
+            # Append new values to existing arrays
+            if "indoor_activities" in validated_data:
+                update_operations["$push"] = {
+                    "indoor_activities": {"$each": validated_data["indoor_activities"]}
+                }
+
+            if "outdoor_activities" in validated_data:
+                if "$push" not in update_operations:
+                    update_operations["$push"] = {}
+                update_operations["$push"]["outdoor_activities"] = {
+                    "$each": validated_data["outdoor_activities"]
+                }
+
+            if "cuisines" in validated_data:
+                if "$push" not in update_operations:
+                    update_operations["$push"] = {}
+                update_operations["$push"]["cuisines"] = {"$each": validated_data["cuisines"]}
+
+            if "preferred_meal_time" in validated_data:
+                if "$push" not in update_operations:
+                    update_operations["$push"] = {}
+                update_operations["$push"]["preferred_meal_time"] = {
+                    "$each": validated_data["preferred_meal_time"]
+                }
+
+            # If there are update operations, proceed to update the database
+            if update_operations:
+                updated = self.db.user_preferences.update_one(
+                    {"user_id": ObjectId(user_id)},
+                    update_operations,
+                    upsert=True
+                )
+
+                if updated.matched_count > 0 or updated.upserted_id:
+                    return {"message": "Preferences updated successfully"}, 200
+
+            return {"error": "No valid data to update"}, 400
+
         except ValidationError as err:
             return {"error": err.messages}, 400
-
-        user = self.db.users_auth.find_one({"_id": ObjectId(user_id)})
-        if not user:
-            return {"error": "User not found"}, 404
-
-        updated = self.db.user_preferences.update_one(
-            {"user_id": ObjectId(user_id)},
-            {"$set": validated_data},
-            upsert=True
-        )
-
-        if updated.matched_count > 0:
-            return {"message": "Profile updated successfully"}, 200
-        return {"error": "Failed to update profile"}, 500
+        except Exception as e:
+            print(f"Error in update_preferences: {str(e)}")
+            return {"error": "Internal server error"}, 500
+    
 
     def add_visited_places(self, user_id, places):
         try:
