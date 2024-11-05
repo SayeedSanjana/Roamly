@@ -43,6 +43,10 @@ def create_app():
     from app.controllers.data_routes import create_data_routes
     app.register_blueprint(create_data_routes(db), url_prefix='/data')
 
+    # Register the recommendation routes
+    from app.controllers.recommendation_routes import create_recommendation_routes
+    app.register_blueprint(create_recommendation_routes(db), url_prefix='/recommendation')
+
 
    
     # Start the background scheduler

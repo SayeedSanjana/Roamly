@@ -1,0 +1,456 @@
+1. location=45.5088,-73.554&weather=sunny&time=8:00 AM
+
+ HTTP/1.1 200 OK
+Server: Werkzeug/3.0.4 Python/3.11.2
+Date: Tue, 05 Nov 2024 08:36:22 GMT
+Content-Type: application/json
+Content-Length: 5590
+Access-Control-Allow-Origin: *
+Connection: close
+
+{
+  "based_on_preferences": [
+    {
+      "address": "443 Rue Saint-Vincent Montreal, QC H2Y 3A6 Canada",
+      "category": "restaurant",
+      "cuisine_type": "Italian",
+      "distance": 0.09,
+      "name": "Le Muscadin",
+      "rating": 5.0
+    },
+    {
+      "address": "273 Rue Saint Paul E Montreal, QC H2Y 1H1 Canada",
+      "category": "restaurant",
+      "cuisine_type": "Italian",
+      "distance": 0.09,
+      "name": "L'Usine de Spaghetti",
+      "rating": 4.0
+    },
+    {
+      "address": "17 Rue Notre-Dame O Montreal, QC H2Y 1B6 Canada",
+      "category": "restaurant",
+      "cuisine_type": "Italian",
+      "distance": 0.23,
+      "name": "Ristorante Quattro",
+      "rating": 4.1
+    },
+    {
+      "address": "1096 Boulevard Saint-Laurent Montreal, QC H2Z 1J5 Canada",
+      "category": "restaurant",
+      "cuisine_type": "Mexican",
+      "distance": 0.34,
+      "name": "La Capital Tacos",
+      "rating": 4.1
+    },
+    {
+      "address": "2027 Boulevard Saint-Laurent Montreal, QC H2X 1G3 Canada",
+      "category": "restaurant",
+      "cuisine_type": "Indian",
+      "distance": 0.68,
+      "name": "Darbar",
+      "rating": 4.1
+    },
+    {
+      "address": "3712 Boulevard Saint-Laurent Montreal, QC H2X 2V4 Canada",
+      "category": "restaurant",
+      "cuisine_type": "Indian",
+      "distance": 1.08,
+      "name": "Singh's",
+      "rating": 4.0
+    },
+    {
+      "address": "1224 Rue Drummond Montreal, QC H3G 1V7 Canada",
+      "category": "restaurant",
+      "cuisine_type": "Mexican",
+      "distance": 1.19,
+      "name": "Escondite",
+      "rating": 4.4
+    },
+    {
+      "address": "2077 Rue Stanley Montreal, QC H3A 1R7 Canada",
+      "category": "restaurant",
+      "cuisine_type": "Indian",
+      "distance": 1.22,
+      "name": "Le Taj",
+      "rating": 3.9
+    },
+    {
+      "address": "1391 Rue Saint-Jacques Montreal, QC H3C 4J4 Canada",
+      "category": "restaurant",
+      "cuisine_type": "Italian",
+      "distance": 1.3,
+      "name": "Nora Gray",
+      "rating": 4.0
+    },
+    {
+      "address": "3962 Boulevard Saint-Laurent Montreal, QC H2W 1Y3 Canada",
+      "category": "restaurant",
+      "cuisine_type": "Indian",
+      "distance": 1.33,
+      "name": "Restaurant Atma",
+      "rating": 3.9
+    },
+    {
+      "address": "1504 Rue Sherbrooke O Montreal, QC H3G 1L3 Canada",
+      "category": "restaurant",
+      "cuisine_type": "Italian",
+      "distance": 1.54,
+      "name": "Beatrice",
+      "rating": 4.1
+    },
+    {
+      "address": "4542 Saint Denis Street Montreal, QC H2S 1R1 Canada",
+      "category": "restaurant",
+      "cuisine_type": "Mexican",
+      "distance": 1.79,
+      "name": "Caifan Tacos Bar",
+      "rating": 4.6
+    },
+    {
+      "address": "48 Rue Dante Montreal, QC H2S 1J5 Canada",
+      "category": "restaurant",
+      "cuisine_type": "Italian",
+      "distance": 3.33,
+      "name": "Impasto",
+      "rating": 4.2
+    }
+  ],
+  "most_popular": [
+    {
+      "address": "443 Rue Saint-Vincent Montreal, QC H2Y 3A6 Canada",
+      "category": "restaurant",
+      "cuisine_type": "Italian",
+      "distance": 0.09,
+      "name": "Le Muscadin",
+      "rating": 5.0
+    },
+    {
+      "address": "1237 Rue Atateken Montreal, QC H2L 3K9 Canada",
+      "category": "restaurant",
+      "cuisine_type": "Modern European, Cocktail Bars",
+      "distance": 0.57,
+      "name": "Resto Keela",
+      "rating": 4.9
+    },
+    {
+      "address": "100 Rue Marie-Anne O Montreal, QC H2W 1B9 Canada",
+      "category": "restaurant",
+      "cuisine_type": "Argentine",
+      "distance": 1.63,
+      "name": "Che Churros & Empanadas",
+      "rating": 4.8
+    },
+    {
+      "address": "740 Rue William Montreal, QC H3C 1P1 Canada",
+      "category": "restaurant",
+      "cuisine_type": "French, Bars, Seafood",
+      "distance": 0.75,
+      "name": "Place Carmin",
+      "rating": 4.7
+    },
+    {
+      "address": "1201 Avenue Van Horne Montreal, QC H2V 1K4 Canada",
+      "category": "restaurant",
+      "cuisine_type": "Syrian",
+      "distance": 3.04,
+      "name": "Damas",
+      "rating": 4.7
+    },
+    {
+      "address": "210 Rue Saint Viateur O Montreal, QC H2T 2L5 Canada",
+      "category": "restaurant",
+      "cuisine_type": "Burgers",
+      "distance": 2.5,
+      "name": "QDC Burger",
+      "rating": 4.7
+    },
+    {
+      "address": "851 Rue Rachel E Montreal, QC H2J 2H9 Canada",
+      "category": "restaurant",
+      "cuisine_type": "African",
+      "distance": 1.51,
+      "name": "Le Virunga",
+      "rating": 4.7
+    },
+    {
+      "address": "630 Rue Cathcart Montreal, QC H3B 0C3 Canada",
+      "category": "restaurant",
+      "cuisine_type": "Cocktail Bars, Japanese, Speakeasies",
+      "distance": 0.8,
+      "name": "Gokudo",
+      "rating": 4.6
+    },
+    {
+      "address": "423 Rue Saint-Claude Montreal, QC H2Y 3B6 Canada",
+      "category": "restaurant",
+      "cuisine_type": "French, Canadian (New)",
+      "distance": 0.08,
+      "name": "Le Club Chasse et P\u00c3\u00aache",
+      "rating": 4.6
+    },
+    {
+      "address": "3609 Rue Saint-Denis Montreal, QC H2X 3L6 Canada",
+      "category": "restaurant",
+      "cuisine_type": "Japanese, Sushi Bars, Vegan",
+      "distance": 0.99,
+      "name": "Sushi Momo V\u00c3\u00a9g\u00c3\u00a9talien",
+      "rating": 4.6
+    },
+    {
+      "category": "outdoor",
+      "details": null,
+      "distance": 1.98,
+      "location": "4231-4349 Rue Chapleau Montreal, QC H2H 2K7 Canada",
+      "name": "Parc Baldwin",
+      "rating": 5.0
+    },
+    {
+      "category": "outdoor",
+      "details": null,
+      "distance": 0.49,
+      "location": "9 Rue Sainte-Catherine Est Montreal, QC H2X 1K4 Canada",
+      "name": "Underdog Boxing Gym",
+      "rating": 5.0
+    },
+    {
+      "category": "outdoor",
+      "details": null,
+      "distance": 3.59,
+      "location": "Boulevard de l'\u00c3\u008ele des S\u00c5\u0093ur Montreal, QC H3E 1C4 Canada",
+      "name": "Parc de West",
+      "rating": 5.0
+    },
+    {
+      "category": "outdoor",
+      "details": null,
+      "distance": 0.9,
+      "location": "733 Rue Cathcart Floor 3 Montreal, QC H3B 5L6 Canada",
+      "name": "PadelSport",
+      "rating": 5.0
+    },
+    {
+      "category": "outdoor",
+      "details": null,
+      "distance": 1.78,
+      "location": "962 Avenue du Mont-Royal E Montreal, QC H2J 1X5 Canada",
+      "name": "Place des Fleurs-de-Macadam",
+      "rating": 5.0
+    },
+    {
+      "category": "outdoor",
+      "details": null,
+      "distance": 1.75,
+      "location": "2000, Ch Remembrance Montreal, QC H3H 1A2 Canada",
+      "name": "Toboggan sur le Mont-Royal",
+      "rating": 5.0
+    },
+    {
+      "category": "outdoor",
+      "details": null,
+      "distance": 3.02,
+      "location": "1600 Rue Drucourt Montreal, QC H2G 1N6 Canada",
+      "name": "Parc P\u00c3\u00a8re-Marquette",
+      "rating": 5.0
+    },
+    {
+      "category": "outdoor",
+      "details": null,
+      "distance": 3.57,
+      "location": "2100 Decarie Boul Montreal, QC H4A 3J3 Canada",
+      "name": "Play It Again Sports",
+      "rating": 5.0
+    },
+    {
+      "category": "outdoor",
+      "details": null,
+      "distance": 1.91,
+      "location": "4671 Saint-Laurent Boulevard Montreal, QC H2T 1R2 Canada",
+      "name": "Sporting Club De Montreal",
+      "rating": 5.0
+    },
+    {
+      "category": "outdoor",
+      "details": null,
+      "distance": 2.14,
+      "location": "4801 Avenue Papineau Montreal, QC H2H 1V7 Canada",
+      "name": "V\u00c3\u00a9lo Branch\u00c3\u00a9",
+      "rating": 5.0
+    }
+  ]
+}
+
+
+2.location=34.0522,-118.2437&weather=clear&time=1:00 PM
+HTTP/1.1 200 OK
+Server: Werkzeug/3.0.4 Python/3.11.2
+Date: Tue, 05 Nov 2024 08:44:28 GMT
+Content-Type: application/json
+Content-Length: 3523
+Access-Control-Allow-Origin: *
+Connection: close
+
+{
+  "based_on_preferences": [],
+  "most_popular": [
+    {
+      "address": "443 Rue Saint-Vincent Montreal, QC H2Y 3A6 Canada",
+      "category": "restaurant",
+      "cuisine_type": "Italian",
+      "distance": 2470.77,
+      "name": "Le Muscadin",
+      "rating": 5.0
+    },
+    {
+      "address": "1237 Rue Atateken Montreal, QC H2L 3K9 Canada",
+      "category": "restaurant",
+      "cuisine_type": "Modern European, Cocktail Bars",
+      "distance": 2470.71,
+      "name": "Resto Keela",
+      "rating": 4.9
+    },
+    {
+      "address": "100 Rue Marie-Anne O Montreal, QC H2W 1B9 Canada",
+      "category": "restaurant",
+      "cuisine_type": "Argentine",
+      "distance": 2469.28,
+      "name": "Che Churros & Empanadas",
+      "rating": 4.8
+    },
+    {
+      "address": "740 Rue William Montreal, QC H3C 1P1 Canada",
+      "category": "restaurant",
+      "cuisine_type": "French, Bars, Seafood",
+      "distance": 2470.56,
+      "name": "Place Carmin",
+      "rating": 4.7
+    },
+    {
+      "address": "1201 Avenue Van Horne Montreal, QC H2V 1K4 Canada",
+      "category": "restaurant",
+      "cuisine_type": "Syrian",
+      "distance": 2467.93,
+      "name": "Damas",
+      "rating": 4.7
+    },
+    {
+      "address": "210 Rue Saint Viateur O Montreal, QC H2T 2L5 Canada",
+      "category": "restaurant",
+      "cuisine_type": "Burgers",
+      "distance": 2468.52,
+      "name": "QDC Burger",
+      "rating": 4.7
+    },
+    {
+      "address": "851 Rue Rachel E Montreal, QC H2J 2H9 Canada",
+      "category": "restaurant",
+      "cuisine_type": "African",
+      "distance": 2469.73,
+      "name": "Le Virunga",
+      "rating": 4.7
+    },
+    {
+      "address": "630 Rue Cathcart Montreal, QC H3B 0C3 Canada",
+      "category": "restaurant",
+      "cuisine_type": "Cocktail Bars, Japanese, Speakeasies",
+      "distance": 2470.05,
+      "name": "Gokudo",
+      "rating": 4.6
+    },
+    {
+      "address": "423 Rue Saint-Claude Montreal, QC H2Y 3B6 Canada",
+      "category": "restaurant",
+      "cuisine_type": "French, Canadian (New)",
+      "distance": 2470.84,
+      "name": "Le Club Chasse et P\u00c3\u00aache",
+      "rating": 4.6
+    },
+    {
+      "address": "3609 Rue Saint-Denis Montreal, QC H2X 3L6 Canada",
+      "category": "restaurant",
+      "cuisine_type": "Japanese, Sushi Bars, Vegan",
+      "distance": 2470.05,
+      "name": "Sushi Momo V\u00c3\u00a9g\u00c3\u00a9talien",
+      "rating": 4.6
+    },
+    {
+      "category": "outdoor",
+      "details": null,
+      "distance": 2470.21,
+      "location": "4231-4349 Rue Chapleau Montreal, QC H2H 2K7 Canada",
+      "name": "Parc Baldwin",
+      "rating": 5.0
+    },
+    {
+      "category": "outdoor",
+      "details": null,
+      "distance": 2470.29,
+      "location": "9 Rue Sainte-Catherine Est Montreal, QC H2X 1K4 Canada",
+      "name": "Underdog Boxing Gym",
+      "rating": 5.0
+    },
+    {
+      "category": "outdoor",
+      "details": null,
+      "distance": 2471.2,
+      "location": "Boulevard de l'\u00c3\u008ele des S\u00c5\u0093ur Montreal, QC H3E 1C4 Canada",
+      "name": "Parc de West",
+      "rating": 5.0
+    },
+    {
+      "category": "outdoor",
+      "details": null,
+      "distance": 2469.97,
+      "location": "733 Rue Cathcart Floor 3 Montreal, QC H3B 5L6 Canada",
+      "name": "PadelSport",
+      "rating": 5.0
+    },
+    {
+      "category": "outdoor",
+      "details": null,
+      "distance": 2469.57,
+      "location": "962 Avenue du Mont-Royal E Montreal, QC H2J 1X5 Canada",
+      "name": "Place des Fleurs-de-Macadam",
+      "rating": 5.0
+    },
+    {
+      "category": "outdoor",
+      "details": null,
+      "distance": 2469.1,
+      "location": "2000, Ch Remembrance Montreal, QC H3H 1A2 Canada",
+      "name": "Toboggan sur le Mont-Royal",
+      "rating": 5.0
+    },
+    {
+      "category": "outdoor",
+      "details": null,
+      "distance": 2468.85,
+      "location": "1600 Rue Drucourt Montreal, QC H2G 1N6 Canada",
+      "name": "Parc P\u00c3\u00a8re-Marquette",
+      "rating": 5.0
+    },
+    {
+      "category": "outdoor",
+      "details": null,
+      "distance": 2468.03,
+      "location": "2100 Decarie Boul Montreal, QC H4A 3J3 Canada",
+      "name": "Play It Again Sports",
+      "rating": 5.0
+    },
+    {
+      "category": "outdoor",
+      "details": null,
+      "distance": 2469.11,
+      "location": "4671 Saint-Laurent Boulevard Montreal, QC H2T 1R2 Canada",
+      "name": "Sporting Club De Montreal",
+      "rating": 5.0
+    },
+    {
+      "category": "outdoor",
+      "details": null,
+      "distance": 2469.68,
+      "location": "4801 Avenue Papineau Montreal, QC H2H 1V7 Canada",
+      "name": "V\u00c3\u00a9lo Branch\u00c3\u00a9",
+      "rating": 5.0
+    }
+  ]
+}
