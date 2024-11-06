@@ -1,5 +1,5 @@
 ####
-@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMDg0NjY3MywianRpIjoiMjhiYjYzNGEtN2VmNi00ZjI2LTkwZDEtZjIzOTY1MjEwM2M0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY3Mjk4NTQyYjMxMjk2NmVkMDIxMTZhZCIsIm5iZiI6MTczMDg0NjY3MywiY3NyZiI6ImRkZjVlN2Y3LTc0NzMtNDNjZS1hM2ViLTZkMjAyYWNlMGQ1NiIsImV4cCI6MTczMDkzMzA3M30.6tGNE2158EQkf0cOO_Tlz0UrDSiepbNQ03q4_8NXuhk
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMDg3OTIzNywianRpIjoiYzBlMjMxNzEtNGRiYy00M2ZmLTg0N2EtOWM1YWYwMGM0NzU1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY3MmIxZjAxMDJhMTlkMWYyMGE5OGRlNCIsIm5iZiI6MTczMDg3OTIzNywiY3NyZiI6ImJkNzkzYjczLWMxOTUtNGM2OC1hODBhLTA4OTBmMmY0ZjI0ZCIsImV4cCI6MTczMDk2NTYzN30.xEzMAN77XmkPEwMUYiaNKtxHhapqprvDWhZ7jhTym9Q
 #####
 
 POST http://127.0.0.1:5000/user/update_profile 
@@ -7,9 +7,25 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-   "cuisines": ["French", "Canadian", "Breakfast"],
-  "indoor_activities": ["Reading", "Gaming", "Dancing", "Museums", "Art Exhibitions", "Karaoke"],
-  "outdoor_activities": ["Hiking", "Cycling", "Parks", "Picnics", "Boat Rides"]
+    "cuisines": ["Italian", "Mexican","Indian","French", "Canadian", "Breakfast"],
+    "indoor_activities": ["Reading", "Gaming","Dancing", "Museums", "Art Exhibitions", "Karaoke"],
+    "outdoor_activities": ["Hiking", "Cycling","Parks", "Picnics", "Boat Rides"],
+    "visited_places": [],
+    "preferred_meal_time": [
+        {
+            "meal": "breakfast",
+            "time": "8:00 AM - 10:00 AM"
+        },
+        {
+            "meal": "lunch",
+            "time": "12:00 PM"
+        },
+        {
+            "meal": "dinner",
+            "time": "8:00 PM"
+        }
+    ],
+    "other_preferences": ["Vegan", "Non-Smoking"]
 }
 
 
@@ -27,22 +43,19 @@ Content-Type: application/json
 {
     "visited_places": [
     {
-      "name": "Statue of Liberty",
-      "address": "New York, USA",
-      "category": "Monument"
-      
+      "name": "Montreal Museum of Fine Arts",
+      "address": "1380 Rue Sherbrooke O, Montreal, QC H3G 1J5, Canada",
+      "category": "Museum"
     },
     {
-      "name": "Great Wall of China",
-      "address": "Beijing, China",
-      "category": "Historical Site"
-    
+      "name": "Notre-Dame Basilica of Montreal",
+      "address": "110 Notre-Dame St W, Montreal, QC H2Y 1T1, Canada",
+      "category": "Religious Site"
     },
     {
-      "name": "Sydney Opera House",
-      "address": "Sydney, Australia",
-      "category": "Cultural Landmark"
-      
+      "name": "Mount Royal Park",
+      "address": "1260 Remembrance Rd, Montreal, QC H3H 1A2, Canada",
+      "category": "Park"
     }
     ]
 }
@@ -60,16 +73,16 @@ Content-Type: application/json
 
 
 # {
-#     "cuisines": ["French", "Canadian", "Breakfast"],
-#     "indoor_activities": ["Reading", "Gaming", "Dancing", "Museums", "Art Exhibitions", "Karaoke"]
-#      "outdoor_activities": ["Hiking", "Cycling", "Parks", "Picnics", "Boat Rides"]
+#    "cuisines": ["French", "Canadian", "Breakfast"],
+#   "indoor_activities": ["Reading", "Gaming", "Dancing", "Museums", "Art Exhibitions", "Karaoke"],
+#   "outdoor_activities": ["Hiking", "Cycling", "Parks", "Picnics", "Boat Rides"]
 # }
 
 
 # {
-#     "cuisines": ["Italian", "Mexican"],
-#     "indoor_activities": ["Reading", "Gaming"],
-#     "outdoor_activities": ["Hiking", "Cycling"],
+#     "cuisines": ["Italian", "Mexican","Indian","French", "Canadian", "Breakfast"],
+#     "indoor_activities": ["Reading", "Gaming","Dancing", "Museums", "Art Exhibitions", "Karaoke"],
+#     "outdoor_activities": ["Hiking", "Cycling","Parks", "Picnics", "Boat Rides"],
 #     "visited_places": [],
 #     "preferred_meal_time": [
 #         {
