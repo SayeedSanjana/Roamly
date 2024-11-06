@@ -14,9 +14,9 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-    "location": [45.526767, -73.588768],  
-    "time": "11:00 AM",               
-    "weather": "sunny"             
+   "location": [45.5045, -73.5872],  
+    "time": "05:00 PM",               
+    "weather": "clear"          
            
 }
 
