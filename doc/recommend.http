@@ -1,25 +1,24 @@
 ######
-@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMDc4NjU3OSwianRpIjoiMjY5NzUzZTMtOGFlMy00OWMyLWJmMDEtNzY1MTZmY2I4YmU3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY3Mjk4NTQyYjMxMjk2NmVkMDIxMTZhZCIsIm5iZiI6MTczMDc4NjU3OSwiY3NyZiI6IjU2MWI2OTdjLTIyYWEtNDMwZS1hNTUyLTM3NGUxNzZkZDRiYiIsImV4cCI6MTczMDg3Mjk3OX0.ZFR8UNtwvdl4ZjatH-0aRMPHGVettKgnI4WSInxe9Io
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMDg0NjY3MywianRpIjoiMjhiYjYzNGEtN2VmNi00ZjI2LTkwZDEtZjIzOTY1MjEwM2M0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY3Mjk4NTQyYjMxMjk2NmVkMDIxMTZhZCIsIm5iZiI6MTczMDg0NjY3MywiY3NyZiI6ImRkZjVlN2Y3LTc0NzMtNDNjZS1hM2ViLTZkMjAyYWNlMGQ1NiIsImV4cCI6MTczMDkzMzA3M30.6tGNE2158EQkf0cOO_Tlz0UrDSiepbNQ03q4_8NXuhk
 
 ######
 
-### Fetch Recommendations
-GET http://localhost:5000/recommendation/get_recommendations?location=45.5088,-73.55&weather=windy&time=2:30 PM
-Authorization: Bearer {{token}}
-Content-Type: application/json
+# ### Fetch Recommendations
+# GET http://localhost:5000/recommendation/get_recommendations?location=45.5088,-73.55&weather=windy&time=2:30 PM
+# Authorization: Bearer {{token}}
+# Content-Type: application/json
 
 ### manually setting context
-POST http://localhost:5000/recommendation/update_context
+POST http://localhost:5000/recommendation/get_recommendations
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "location": "45.5088,-73.554",
-  "weather": "sunny",
-  "time": "6:00 PM"
+    "location": [45.526767, -73.588768],  
+    "time": "11:00 AM",               
+    "weather": "sunny"             
+           
 }
-
-
 
 
 # location=45.5088,-73.554&weather=sunny&time=8:00 AM
@@ -29,3 +28,112 @@ Content-Type: application/json
 # location=33.4484,-112.0740&weather=windy&time=2:30 PM
 # location=47.6062,-122.3321&weather=foggy&time=5:45 AM
 # location=25.7617,-80.1918&weather=stormy&time=12:00 PM
+#
+
+
+#1.
+# {
+#     "location": [45.514580, -73.571650],  
+#     "time": "07:30 PM",               
+#     "weather": "rainy"                  
+# }
+
+#2.
+# {
+#     "location": [45.526767, -73.588768],  
+#     "time": "11:00 AM",               
+#     "weather": "sunny"               
+# }
+# Description: Near "La Petite Marche" in Montreal during a late morning on a sunny day.
+# Expected Recommendations: Likely to suggest outdoor activities or brunch places if available.
+
+#3.
+# {
+#     "location": [45.500802, -73.574279],  
+#     "time": "02:00 PM",               
+#     "weather": "cloudy"               
+# }
+
+# Description: Near "Barbie Expo" in Montreal in the afternoon when it's cloudy.
+# Expected Recommendations: Indoor activities like museums or libraries, especially if rain is expected.
+
+#4.
+# {
+#     "location": [45.522169, -73.574450],  
+#     "time": "06:30 PM",               
+#     "weather": "clear"               
+# }
+
+# Description: Near "Au Pied de Cochon" in Montreal in the early evening with clear weather.
+# Expected Recommendations: Restaurants or popular dine-out spots, especially those matching preferred cuisines.
+
+#5.
+# {
+#     "location": [45.5090, -73.5619],  
+#     "time": "08:30 PM",               
+#     "weather": "snowy"               
+# }
+# Description: Near "Book Nook Library" in Montreal during the evening in snowy weather.
+# Expected Recommendations: Cozy indoor activities, potentially cafes, bars, or gaming centers.
+
+#6.
+# {
+#     "location": [45.5036, -73.5587],  
+#     "time": "09:00 AM",               
+#     "weather": "rainy"               
+# }
+# Description: Near "La Bella Vita" in Montreal on a rainy morning.
+# Expected Recommendations: Indoor places like libraries or reading spots, possibly breakfast places matching cuisine preferences.
+
+#7.
+# {
+#     "location": [45.5045, -73.5872],  
+#     "time": "05:00 PM",               
+#     "weather": "clear"               
+# }
+# Description: Near "Mount Royal Hiking Trails" in Montreal in the early evening on a clear day.
+# Expected Recommendations: Outdoor activities like parks, hiking, or picnic areas, especially if it’s a popular time for outdoor enthusiasts.
+
+#8.
+# {
+#     "location": [45.537010, -73.605690],  
+#     "time": "03:30 PM",               
+#     "weather": "snowy"               
+# }
+# Description: Near "Le Vestiaire" in Montreal on a snowy afternoon.
+# Expected Recommendations: Indoor entertainment or warm dining options, possibly pubs or cafes.
+
+#9.
+# {
+#     "location": [45.526678, -73.580239],  
+#     "time": "12:00 PM",               
+#     "weather": "clear"               
+# }
+# Description: Near "L'Avenue" in Montreal around lunchtime with clear skies.
+# Expected Recommendations: Lunch spots or brunch places, with a focus on popular or personalized restaurant recommendations.
+
+#10.
+# {
+#     "location": [45.5184, -73.5730],  
+#     "time": "10:00 AM",               
+#     "weather": "cloudy"               
+# }
+# Description: Near "Gamer's Haven Arcade" in Montreal on a cloudy morning.
+# Expected Recommendations: Indoor activities, particularly gaming or similar interests, possibly art exhibitions.
+
+#11.
+# {
+#     "location": [45.498535, -73.579402],  
+#     "time": "09:00 PM",               
+#     "weather": "rainy"               
+# }
+# Description: Near "Musée des Beaux-Arts de Montréal" on a rainy night.
+# Expected Recommendations: Indoor places like museums, cafes, or pubs, and possibly cultural or art-related indoor events.
+
+
+#Dinner
+# {
+#   "location": [45.522169, -73.574450],  
+#   "time": "08:00 PM",               
+#   "weather": "clear"               
+# }

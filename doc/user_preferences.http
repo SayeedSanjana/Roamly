@@ -1,5 +1,5 @@
 ####
-@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMDc3NDM0MSwianRpIjoiZThhODU1NTktZmM1Ni00Njk1LTg1ZDgtYTE0Y2FkYjE4Njk4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY3Mjk4NTQyYjMxMjk2NmVkMDIxMTZhZCIsIm5iZiI6MTczMDc3NDM0MSwiY3NyZiI6IjU2NzUxZWZjLTVlNTAtNDdkMS05NzIxLTk5MWE2ZDJlMWE3YSIsImV4cCI6MTczMDg2MDc0MX0.IAmip7MXBEMY6-DRrWPWOVeMFr-R_JUdqIO8ph0XZ3A
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMDg0NjY3MywianRpIjoiMjhiYjYzNGEtN2VmNi00ZjI2LTkwZDEtZjIzOTY1MjEwM2M0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY3Mjk4NTQyYjMxMjk2NmVkMDIxMTZhZCIsIm5iZiI6MTczMDg0NjY3MywiY3NyZiI6ImRkZjVlN2Y3LTc0NzMtNDNjZS1hM2ViLTZkMjAyYWNlMGQ1NiIsImV4cCI6MTczMDkzMzA3M30.6tGNE2158EQkf0cOO_Tlz0UrDSiepbNQ03q4_8NXuhk
 #####
 
 POST http://127.0.0.1:5000/user/update_profile 
@@ -7,25 +7,9 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-   "cuisines": ["Italian", "Mexican"],
-    "indoor_activities": ["Reading", "Gaming"],
-    "outdoor_activities": ["Hiking", "Cycling"],
-    "visited_places": [],
-    "preferred_meal_time": [
-        {
-            "meal": "breakfast",
-            "time": "8:00 AM - 10:00 AM"
-        },
-        {
-            "meal": "lunch",
-            "time": "12:00 PM"
-        },
-        {
-            "meal": "dinner",
-            "time": "8:00 PM"
-        }
-    ],
-    "other_preferences": ["Vegan", "Non-Smoking"]
+   "cuisines": ["French", "Canadian", "Breakfast"],
+  "indoor_activities": ["Reading", "Gaming", "Dancing", "Museums", "Art Exhibitions", "Karaoke"],
+  "outdoor_activities": ["Hiking", "Cycling", "Parks", "Picnics", "Boat Rides"]
 }
 
 
@@ -76,8 +60,9 @@ Content-Type: application/json
 
 
 # {
-#     "cuisines": ["Indian"],
-#     "indoor_activities": ["Dancing"]
+#     "cuisines": ["French", "Canadian", "Breakfast"],
+#     "indoor_activities": ["Reading", "Gaming", "Dancing", "Museums", "Art Exhibitions", "Karaoke"]
+#      "outdoor_activities": ["Hiking", "Cycling", "Parks", "Picnics", "Boat Rides"]
 # }
 
 

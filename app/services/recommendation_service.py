@@ -1,148 +1,181 @@
-from bson import ObjectId
-from geopy.distance import geodesic
+from datetime import datetime
+import math
 
 class RecommendationService:
     def __init__(self, db):
         self.db = db
-        self.current_location = (0.0, 0.0)
-        self.weather = None
-        self.time_of_day = None
 
-    def update_context(self, location, weather, time_of_day):
-        if location:
-            self.current_location = tuple(map(float, location.split(',')))
-        self.weather = weather
-        self.time_of_day = time_of_day
+    def get_user_preferences(self, user_id):
+        return self.db.user_preferences.find_one({"user_id": user_id})
 
-    def get_recommendations(self, user_id, current_location, weather, time_of_day):
-        try:
-            user_id = ObjectId(user_id)
-            user_preferences = self.db.user_preferences.find_one({"user_id": user_id})
-            if not user_preferences:
-                return {"error": "User preferences not found"}
+    def get_similar_users_recommendations(self, user_id):
+        # Collaborative filtering logic
+        user_ratings = self.db.dummy_user_visits.find({"user_id": user_id})
+        if not user_ratings:
+            return []
 
-            # Update context
-            self.update_context(current_location, weather, time_of_day)
+        all_users = self.db.dummy_user_visits.distinct("user_id")
+        similarity_scores = {}
+        for other_user in all_users:
+            if other_user != user_id:
+                other_user_ratings = self.db.dummy_user_visits.find({"user_id": other_user})
+                common_ratings = sum(1 for r in user_ratings if r in other_user_ratings)
+                similarity_scores[other_user] = common_ratings
 
-            # Initialize recommendation sections
-            recommendations = {
-                "based_on_preferences": [],
-                "most_popular": []
-            }
+        sorted_users = sorted(similarity_scores.items(), key=lambda x: x[1], reverse=True)
+        top_similar_users = [user[0] for user in sorted_users[:5]]
 
-            # Content-Based Filtering: Recommend based on user preferences
-            if user_preferences:
-                recommendations["based_on_preferences"].extend(self._recommend_based_on_preferences(user_preferences))
-
-            # Collaborative Filtering: Recommend popular options
-            recommendations["most_popular"].extend(self._get_most_popular())
-
-            return recommendations
-        except Exception as e:
-            return {"error": str(e)}
-
-    def _recommend_based_on_preferences(self, user_preferences):
         recommendations = []
-
-        # Check if it's meal time and recommend restaurants
-        is_meal_time = any(self.time_of_day in pref['time'] for pref in user_preferences.get('preferred_meal_time', []))
-        if is_meal_time:
-            recommendations.extend(self._recommend_restaurants(user_preferences))
-        else:
-            if self.weather.lower() == 'sunny':
-                recommendations.extend(self._recommend_outdoor_activities(user_preferences))
-            else:
-                recommendations.extend(self._recommend_indoor_activities(user_preferences))
+        for user in top_similar_users:
+            user_recs = self.db.dummy_user_visits.find({"user_id": user}).limit(5)
+            recommendations.extend(user_recs)
 
         return recommendations
 
-    def _get_most_popular(self):
-        popular_recommendations = []
+    def get_content_based_recommendations(self, preferences):
+        # Content-based filtering logic
+        recommendations = []
 
-        # Fetch popular restaurants
-        popular_restaurants = self.db.restaurants.find().sort("rating", -1).limit(10)
-        for restaurant in popular_restaurants:
-            distance = geodesic(self.current_location, (restaurant['latitude'], restaurant['longitude'])).miles
-            popular_recommendations.append({
-                "name": restaurant["name"],
-                "address": restaurant["address"],
-                "rating": restaurant["rating"],
-                "distance": round(distance, 2),
-                "category": "restaurant",
-                "cuisine_type": restaurant.get("cuisine_type")
-            })
+        # Filter restaurants and set type without subtype
+        if "cuisines" in preferences:
+            cuisine_matches = self.db.restaurants.find({
+                "cuisine_type": {"$in": preferences["cuisines"]}
+            }, {"_id": 1, "name": 1, "address": 1, "city": 1, "state": 1, "zip_code": 1,
+                "latitude": 1, "longitude": 1, "cuisine_type": 1, "review_count": 1,
+                "rating": 1}).limit(5)
+            
+            for match in cuisine_matches:
+                match["type"] = "restaurant"  # Only set the type, no subtype
+                recommendations.append(match)
 
-        # Fetch popular activities based on weather
-        if self.weather.lower() in ["sunny", "clear"]:
-            popular_activities = self.db.outdoor_activities.find().sort("rating", -1).limit(10)
-            category = "outdoor"
+        # Filter indoor activities and add "type" as "indoor"
+        if "indoor_activities" in preferences:
+            indoor_matches = self.db.indoor_activities.find({
+                "category": {"$in": preferences["indoor_activities"]}
+            }, {"_id": 1, "name": 1, "address": 1, "city": 1, "state": 1, "zip_code": 1,
+                "latitude": 1, "longitude": 1, "category": 1, "review_count": 1,
+                "rating": 1}).limit(5)
+            for match in indoor_matches:
+                match["type"] = "indoor"
+                recommendations.append(match)
+
+        # Filter outdoor activities and add "type" as "outdoor"
+        if "outdoor_activities" in preferences:
+            outdoor_matches = self.db.outdoor_activities.find({
+                "category": {"$in": preferences["outdoor_activities"]}
+            }, {"_id": 1, "name": 1, "address": 1, "city": 1, "state": 1, "zip_code": 1,
+                "latitude": 1, "longitude": 1, "category": 1, "review_count": 1,
+                "rating": 1}).limit(5)
+            for match in outdoor_matches:
+                match["type"] = "outdoor"
+                recommendations.append(match)
+
+        return recommendations
+
+    def prioritize_recommendations(self, recommendations, current_time, weather, meal_times):
+        # Prioritization logic
+        prioritized = []
+        try:
+            current_time_obj = datetime.strptime(current_time, "%I:%M %p")
+        except ValueError:
+            raise ValueError("Current time must be in the format 'HH:MM AM/PM'.")
+
+        is_meal_time = False
+        for meal in meal_times:
+            if " - " in meal["time"]:
+                start_time, end_time = meal["time"].split(" - ")
+                try:
+                    start_time_obj = datetime.strptime(start_time.strip(), "%I:%M %p")
+                    end_time_obj = datetime.strptime(end_time.strip(), "%I:%M %p")
+                    if start_time_obj <= current_time_obj <= end_time_obj:
+                        is_meal_time = True
+                        break
+                except ValueError:
+                    raise ValueError("Time in 'preferred_meal_time' must be in the format 'HH:MM AM/PM - HH:MM PM'.")
+            else:
+                try:
+                    meal_time_obj = datetime.strptime(meal["time"].strip(), "%I:%M %p")
+                    if meal_time_obj == current_time_obj:
+                        is_meal_time = True
+                        break
+                except ValueError:
+                    raise ValueError("Time in 'preferred_meal_time' must be in the format 'HH:MM AM/PM'.")
+
+        if is_meal_time:
+            prioritized.extend([rec for rec in recommendations if rec.get("type") == "restaurant"])
         else:
-            popular_activities = self.db.indoor_activities.find().sort("rating", -1).limit(10)
-            category = "indoor"
+            if weather in ["rainy", "snowy", "windy","cloudy"]:
+                prioritized.extend([rec for rec in recommendations if rec.get("type") == "indoor"])
+            else:
+                prioritized.extend([rec for rec in recommendations if rec.get("type") == "outdoor"])
 
-        for activity in popular_activities:
-            distance = geodesic(self.current_location, (activity['latitude'], activity['longitude'])).miles
-            popular_recommendations.append({
-                "name": activity["name"],
-                "location": activity["address"],
-                "rating": activity["rating"],
-                "distance": round(distance, 2),
-                "category": category,
-                "details": activity.get("details")
-            })
+        return prioritized
 
-        return popular_recommendations
+    def filter_nearby_places(self, recommendations, current_location):
+        """
+        Filter Recommendations Based on Proximity:
+        - Use Haversine formula to calculate distance between current location and place
+        """
+        def haversine(lat1, lon1, lat2, lon2):
+            R = 6371  # Earth radius in kilometers
+            d_lat = math.radians(lat2 - lat1)
+            d_lon = math.radians(lon2 - lon1)
+            a = math.sin(d_lat / 2) ** 2 + math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) * math.sin(d_lon / 2) ** 2
+            c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+            return R * c
 
-    def _recommend_restaurants(self, user_preferences):
-        cuisine_preferences = user_preferences.get('cuisines', [])
-        nearby_restaurants = self.db.restaurants.find({"cuisine_type": {"$in": cuisine_preferences}})
-        sorted_restaurants = sorted(
-            nearby_restaurants,
-            key=lambda r: geodesic(self.current_location, (r['latitude'], r['longitude'])).miles
+        lat1, lon1 = current_location
+        nearby_recommendations = []
+        for rec in recommendations:
+            distance = haversine(lat1, lon1, rec["latitude"], rec["longitude"])
+            if distance <= 10:
+                rec["distance"] = round(distance, 2)  # Add distance to each recommendation
+                nearby_recommendations.append(rec)
+
+        return nearby_recommendations
+
+    def get_recommendations(self, user_id, current_location, current_time, weather):
+        user_preferences = self.get_user_preferences(user_id)
+        if not user_preferences:
+            return {"error": "User preferences not found"}, 404
+
+        similar_user_recs = self.get_similar_users_recommendations(user_id)
+        content_recs = self.get_content_based_recommendations(user_preferences)
+
+        all_personalized_recs = similar_user_recs + content_recs
+        prioritized_personalized_recs = self.prioritize_recommendations(
+            all_personalized_recs, current_time, weather, user_preferences.get("preferred_meal_time", [])
         )
-        return [
-            {
-                "name": r["name"],
-                "address": r["address"],
-                "rating": r["rating"],
-                "distance": round(geodesic(self.current_location, (r['latitude'], r['longitude'])).miles, 2),
-                "category": "restaurant",
-                "cuisine_type": r.get("cuisine_type")
-            } for r in sorted_restaurants
-        ]
 
-    def _recommend_outdoor_activities(self, user_preferences):
-        outdoor_preferences = user_preferences.get('outdoor_activities', [])
-        outdoor_activities = self.db.outdoor_activities.find({"activity_type": {"$in": outdoor_preferences}})
-        sorted_activities = sorted(
-            outdoor_activities,
-            key=lambda a: geodesic(self.current_location, (a['latitude'], a['longitude'])).miles
-        )
-        return [
-            {
-                "name": a["name"],
-                "location": a["address"],
-                "rating": a["rating"],
-                "distance": round(geodesic(self.current_location, (a['latitude'], a['longitude'])).miles, 2),
-                "category": "outdoor",
-                "details": a.get("category")
-            } for a in sorted_activities
-        ]
+        # Retrieve popular restaurants, indoor, and outdoor activities
+        popular_recs = list(self.db.restaurants.find().sort("rating", -1).limit(5)) + \
+                    list(self.db.indoor_activities.find().sort("rating", -1).limit(5)) + \
+                    list(self.db.outdoor_activities.find().sort("rating", -1).limit(5))
 
-    def _recommend_indoor_activities(self, user_preferences):
-        indoor_preferences = user_preferences.get('indoor_activities', [])
-        indoor_activities = self.db.indoor_activities.find({"activity_type": {"$in": indoor_preferences}})
-        sorted_activities = sorted(
-            indoor_activities,
-            key=lambda a: geodesic(self.current_location, (a['latitude'], a['longitude'])).miles
-        )
-        return [
-            {
-                "name": a["name"],
-                "location": a["address"],
-                "rating": a["rating"],
-                "distance": round(geodesic(self.current_location, (a['latitude'], a['longitude'])).miles, 2),
-                "category": "indoor",
-                "details": a.get("details")
-            } for a in sorted_activities
-        ]
+        # Add type attribute for popular restaurants
+        for rec in popular_recs:
+            if "cuisine_type" in rec:
+                rec["type"] = "restaurant"
+            elif "category" in rec:
+                if rec["category"] in ["Parks", "Outdoor Activities"]:
+                    rec["type"] = "outdoor"
+                else:
+                    rec["type"] = "indoor"
+
+        personalized_nearby_recs = self.filter_nearby_places(prioritized_personalized_recs, current_location)
+        popular_nearby_recs = self.filter_nearby_places(popular_recs, current_location)
+
+        # Convert ObjectId to string for JSON serialization
+        def serialize_object_id(recommendations):
+            for rec in recommendations:
+                if "_id" in rec:
+                    rec["_id"] = str(rec["_id"])
+            return recommendations
+
+        personalized_nearby_recs = serialize_object_id(personalized_nearby_recs)
+        popular_nearby_recs = serialize_object_id(popular_nearby_recs)
+
+        return {
+            "personalized_recommendations": personalized_nearby_recs,
+            "popular_recommendations": popular_nearby_recs
+        }
