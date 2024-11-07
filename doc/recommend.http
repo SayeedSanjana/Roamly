@@ -8,15 +8,15 @@
 # Authorization: Bearer {{token}}
 # Content-Type: application/json
 
-### manually setting context
+### get all recomendations
 POST http://localhost:5000/recommendation/get_recommendations
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "location": [45.522169, -73.574450],  
-  "time": "08:00 PM",               
-  "weather": "clear"                       
+  "location": [45.514580, -73.571650],  
+  "time": "05:30 PM",               
+ "weather": "sunny"                  
 }
 
 
@@ -40,7 +40,7 @@ Content-Type: application/json
 #2.
 # {
 #     "location": [45.526767, -73.588768],  
-#     "time": "11:00 AM",               
+#     "time": "5:00 PM",               
 #     "weather": "sunny"               
 # }
 # Description: Near "La Petite Marche" in Montreal during a late morning on a sunny day.

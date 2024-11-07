@@ -30,7 +30,8 @@ class DataService:
             'Longitude': 'longitude',
             'Cuisine Type': 'cuisine_type',
             'Review Count': 'review_count',
-            'Rating': 'rating'
+            'Rating': 'rating',
+            'Foodtime':'food_time'
         })
 
         dummy_user_visits = dummy_user_visits.rename(columns={

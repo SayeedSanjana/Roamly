@@ -1,0 +1,201 @@
+Name,Address,City,State,Zip Code,Latitude,Longitude,Cuisine Type,Review Count,Rating
+Au Pied de Cochon,"536 Avenue Duluth E Montreal, QC H2L 1A9 Canada",Montreal,QC,H2L 1A9,45.522169,-73.57445,Canadian (New),1453,4.2
+L'Express,"3927 Rue Saint-Denis Montreal, QC H2W 2M4 Canada",Montreal,QC,H2W 2M4,45.52032,-73.57437,French,724,4.3
+Bouillon Bilk,"22 Rue Ste-Catherine East Montreal, QC H2X 1K4 Canada",Montreal,QC,H2X 1K4,45.51010242374259,-73.563432,Modern European,526,4.6
+La Banquise,"994 Rue Rachel E Montreal, QC H2J 2J3 Canada",Montreal,QC,H2J 2J3,45.525354,-73.574769,Poutineries,2337,4
+L'Avenue,"922 Avenue du Mont-Royal E Montreal, QC H2J 1X2 Canada",Montreal,QC,H2J 1X2,45.52667817,-73.58023913,Breakfast & Brunch,1310,4.5
+Modavie,"1 Rue Saint-Paul O Montreal, QC H2Y 1Y6 Canada",Montreal,QC,H2Y 1Y6,45.50548,-73.55396,"French, Mediterranean",1004,4.1
+Schwartz's,"3895 Boulevard Saint-Laurent Montreal, QC H2W 1X9 Canada",Montreal,QC,H2W 1X9,45.516353,-73.577642,"Delis, Sandwiches",3370,4.1
+Burger Bar Crescent,"1465 Rue Crescent Montreal, QC H3G 2B2 Canada",Montreal,QC,H3G 2B2,45.498066,-73.577052,"Burgers, American, Poutineries",585,4.3
+Restaurant Bonaparte,"447 Rue Saint-François-Xavier Montreal, QC H2Y 2T1 Canada",Montreal,QC,H2Y 2T1,45.503344,-73.556115,French,428,4.5
+Deville Dinerbar,"1425 Rue Stanley Montreal, QC H3A 1P4 Canada",Montreal,QC,H3A 1P4,45.499686,-73.574147,Diners,635,4
+Damas,"1201 Avenue Van Horne Montreal, QC H2V 1K4 Canada",Montreal,QC,H2V 1K4,45.52258,-73.61344,Syrian,465,4.7
+Kazu,"1844 Rue Sainte-Catherine O Montreal, QC H3H 1M1 Canada",Montreal,QC,H3H 1M1,45.492867,-73.580078,Japanese,744,4.3
+Le Majestique,"4105 Boulevard Saint-Laurent Montreal, QC H2W 1Y7 Canada",Montreal,QC,H2W 1Y7,45.5175436,-73.5802618,"Bars, Canadian (New)",218,4.4
+Toqué,"900 Place Jean-Paul-Riopelle Montreal, QC H2Z 2B2 Canada",Montreal,QC,H2Z 2B2,45.5029475,-73.5612041,Canadian (New),301,4.3
+Jérôme Ferrer Europea,"1065 Rue de la Montagne Montreal, QC H3G 0B9 Canada",Montreal,QC,H3G 0B9,45.4964748,-73.5717854,French,396,4.3
+Ichigo Ichie,"360 Rue Rachel E Montreal, QC H2W 1E9 Canada",Montreal,QC,H2W 1E9,45.52128,-73.57842,"Japanese, Pubs",125,4.5
+Reuben's Deli & Steakhouse,"1116 Rue Sainte-Catherine Ouest Montreal, QC H3B 1H4 Canada",Montreal,QC,H3B 1H4,45.49959,-73.57294,"Delis, Sandwiches, Steakhouses",723,4
+Barranco MTL,"4552 Rue Saint-Denis Montreal, QC H2J 2L3 Canada",Montreal,QC,H2J 2L3,45.52426823888716,-73.58393074,"Tapas Bars, Peruvian, Cocktail Bars",68,4.4
+Les Deux Gamins,"170 Rue Prince Arthur E Montreal, QC H2X 1B7 Canada",Montreal,QC,H2X 1B7,45.51551334829121,-73.57096217,"French, Wine Bars, Cocktail Bars",630,4.2
+Monarque,"406 Rue Saint-Jacques Montreal, QC H2Y 1S1 Canada",Montreal,QC,H2Y 1S1,45.50158,-73.55962,Brasseries,218,4.6
+Ferreira Café,"1446 Rue Peel Montreal, QC H3A 1S8 Canada",Montreal,QC,H3A 1S8,45.50032,-73.57415,"Portuguese, Seafood",272,4
+Arepera,"73 Rue Prince Arthur E Montreal, QC H2X 1B4 Canada",Montreal,QC,H2X 1B4,45.514992,-73.572048,Venezuelan,341,4.4
+Poutineville,"1365 Rue Ontario E Montreal, QC H2L 1S1 Canada",Montreal,QC,H2L 1S1,45.523205,-73.5613,Poutineries,644,4.3
+Ma Poule Mouillée,"969 Rue Rachel E Montreal, QC H2J 2J2 Canada",Montreal,QC,H2J 2J2,45.5251692,-73.57526679,"Portuguese, Chicken Shop",652,4.4
+Barroco,"312 Rue Saint-Paul O Montreal, QC H2Y 2A3 Canada",Montreal,QC,H2Y 2A3,45.50138,-73.55592,"Spanish, French, Cocktail Bars",321,4.3
+Cadet,"1431 Boulevard Saint-Laurent Montreal, QC H2X 2S8 Canada",Montreal,QC,H2X 2S8,45.5103,-73.564418,"Bars, Canadian (New)",127,4.5
+Joe Beef,"2491 Rue Notre-Dame Ouest Montreal, QC H3J 1N6 Canada",Montreal,QC,H3J 1N6,45.483062,-73.575308,"Seafood, Steakhouses",834,4.3
+Dunn's,"1249 Rue Metcalfe Montreal, QC H3B 2V5 Canada",Montreal,QC,H3B 2V5,45.500616619166614,-73.57158874,"Poutineries, Burgers, Pizza",356,3.9
+Bar George,"1440 Rue Drummond Montreal, QC H3G 1V9 Canada",Montreal,QC,H3G 1V9,45.49914524060438,-73.575678,"British, Breakfast & Brunch, Bars",275,4.3
+BEVO Bar + Pizzeria,"410 Rue Saint Vincent Montreal, QC H2Y 3A6 Canada",Montreal,QC,H2Y 3A6,45.50696,-73.55324,"Bars, Pizza, Italian",418,4
+Île Flottante,"174-176 Rue Saint-Viateur O Montreal, QC H2T 2L3 Canada",Montreal,QC,H2T 2L3,45.52352,-73.60079,French,140,4.6
+Escondite,"1206 Avenue Union Montreal, QC H3B 3A7 Canada",Montreal,QC,H3B 3A7,45.502978,-73.567959,"Bars, Mexican",262,4.2
+Leméac,"1045 Avenue Laurier O Montreal, QC H2V 2L1 Canada",Montreal,QC,H2V 2L1,45.51832,-73.59735,French,303,4.2
+Onoir,"124 Rue Prince Arthur E Montreal, QC H2X 1B5 Canada",Montreal,QC,H2X 1B5,45.515113,-73.571405,"Desserts, Bars, Seafood",128,4.3
+Saint Sushi Plateau,"424 Avenue Duluth E Montreal, QC H2L 1A3 Canada",Montreal,QC,H2L 1A3,45.521106,-73.575346,"Sushi Bars, Japanese",378,4.5
+Yokato Yokabai,"4185 Rue Drolet Montreal, QC H2W 2L5 Canada",Montreal,QC,H2W 2L5,45.52122062,-73.57851876,Ramen,511,4.3
+Le Filet,"219 Ave du Mont Royal W Montreal, QC H2T 2Y6 Canada",Montreal,QC,H2T 2Y6,45.5224024,-73.5844894,Seafood,116,4.4
+Biirū,"1433 City Councillors Montreal, QC H3A 2E4 Canada",Montreal,QC,H3A 2E4,45.5049159,-73.5686505,"Japanese, Bars",203,4
+Lola Rosa,"545 Rue Milton Montreal, QC H2X 1W5 Canada",Montreal,QC,H2X 1W5,45.50732478,-73.57574819,Vegetarian,307,4.3
+Gyu-Kaku Japanese BBQ,"1255 Rue Crescent Montreal, QC H3G 2B1 Canada",Montreal,QC,H3G 2B1,45.49681,-73.5746,"Japanese, Barbeque, Asian Fusion",218,4.4
+Il Focolaio,"1223 Rue du Square-Phillips Montreal, QC H3B 3E9 Canada",Montreal,QC,H3B 3E9,45.50407,-73.56807,"Pizza, Italian",515,4.3
+Tiradito,"1076 Rue de Bleury Montreal, QC H2Z 1N1 Canada",Montreal,QC,H2Z 1N1,45.50434,-73.56348,"Peruvian, Cocktail Bars, Asian Fusion",160,4.1
+Patati Patata,"4177 Boulevard Saint-Laurent Montreal, QC H2W 1Y7 Canada",Montreal,QC,H2W 1Y7,45.51814,-73.581503,"Burgers, Poutineries",372,4.2
+NYK'S,"1250 Rue de Bleury Montreal, QC H3B 2W4 Canada",Montreal,QC,H3B 2W4,45.5060324,-73.566685,"Pubs, Burgers, Tapas Bars",210,4.1
+Garde Manger,"408 Rue Saint-François-Xavier Montreal, QC H2Y 2S9 Canada",Montreal,QC,H2Y 2S9,45.50273,-73.5557,Seafood,459,4.2
+Ibéricos,"4475 Rue Saint-Denis Montreal, QC H2J 2L2 Canada",Montreal,QC,H2J 2L2,45.52390195,-73.58242996,"Spanish, Tapas Bars",84,4.4
+Le Passé Composé,"1310 Boulevard de Maisonneuve E Montreal, QC H2L 2A5 Canada",Montreal,QC,H2L 2A5,45.520079,-73.556603,"Breakfast & Brunch, Bistros",409,4.4
+The Keg Steakhouse + Bar,"5 Place Ville Marie Montreal, QC H3B 2G2 Canada",Montreal,QC,H3B 2G2,45.5007523,-73.5694969,"Steakhouses, Bars, Seafood",350,4.2
+Lawrence,"9 Avenue Fairmount E Montreal, QC H2T 2L9 Canada",Montreal,QC,H2T 2L9,45.524143,-73.5946503,Modern European,238,4.3
+Gibbys,"298 Place d'Youville Montreal, QC H2Y 2B6 Canada",Montreal,QC,H2Y 2B6,45.50141,-73.55475,"Seafood, Steakhouses",556,4.3
+Réservoir,"9 Avenue Duluth E Montreal, QC H2W 1G7 Canada",Montreal,QC,H2W 1G7,45.517237,-73.57932,"Breakfast & Brunch, Brasseries",154,4.1
+Escondite,"1224 Rue Drummond Montreal, QC H3G 1V7 Canada",Montreal,QC,H3G 1V7,45.497994,-73.573128,Mexican,65,4.4
+The Keg Steakhouse + Bar - Montreal,"25 Saint Paul Street E Montreal, QC H2Y 1G2 Canada",Montreal,QC,H2Y 1G2,45.50608758,-73.55361569,"Steakhouses, Bars, Seafood",251,4.2
+Le Club Chasse et Pêche,"423 Rue Saint-Claude Montreal, QC H2Y 3B6 Canada",Montreal,QC,H2Y 3B6,45.50893,-73.55241,"French, Canadian (New)",237,4.6
+La Capital Tacos,"1096 Boulevard Saint-Laurent Montreal, QC H2Z 1J5 Canada",Montreal,QC,H2Z 1J5,45.50838,-73.561,Mexican,340,4.1
+Joséphine,"4007 Rue Saint-Denis Montreal, QC H2W 2M4 Canada",Montreal,QC,H2W 2M4,45.52086,-73.57556,Seafood,34,4.4
+L'Orignal,"479 Rue Saint-Alexis Montreal, QC H2Y 2N7 Canada",Montreal,QC,H2Y 2N7,45.50275,-73.55798,Canadian (New),298,4.2
+KINTON RAMEN BISHOP,"1211 Rue Bishop Montreal, QC H3G 2E2 Canada",Montreal,QC,H3G 2E2,45.49601,-73.57487,Ramen,266,3.9
+Jatoba,"1184 Place Phillips Montreal, QC H3B 3C8 Canada",Montreal,QC,H3B 3C8,45.503313,-73.567344,Japanese,150,4
+Kinka Izakaya Montreal,"1624 Rue Sainte-Catherine Ouest Montreal, QC H3H 2S7 Canada",Montreal,QC,H3H 2S7,45.49397204,-73.57880952,"Japanese, Pubs, Tapas Bars",387,3.9
+Maison Boulud,"1228 Rue Sherbrooke O Montreal, QC H3G 1G2 Canada",Montreal,QC,H3G 1G2,45.49985,-73.5779699,"French, Breakfast & Brunch",203,4.2
+Imadake,"4006 Rue Sainte-Catherine O Montreal, QC H3Z 1P2 Canada",Montreal,QC,H3Z 1P2,45.488882667853325,-73.58458267,"Japanese, Bars",294,4.1
+Taza Flores,"5375 Avenue du Parc Montreal, QC H2V 4G9 Canada",Montreal,QC,H2V 4G9,45.52183,-73.60072,"Tapas Bars, Modern European",52,4.3
+Estiatorio Milos,"5357 Ave Du Parc Montreal, QC H2V 4G9 Canada",Montreal,QC,H2V 4G9,45.52169101888991,-73.60049302,Greek,177,4.2
+Beatrice,"1504 Rue Sherbrooke O Montreal, QC H3G 1L3 Canada",Montreal,QC,H3G 1L3,45.49696960899045,-73.58093714,Italian,96,4.1
+Gus,"38 Rue Beaubien E Montreal, QC H2S 1P8 Canada",Montreal,QC,H2S 1P8,45.5306384,-73.6080747,"Seafood, Steakhouses",97,4.5
+Pullman,"3424 Avenue du Parc Montreal, QC H2X 2H5 Canada",Montreal,QC,H2X 2H5,45.50845,-73.5721,"Tapas/Small Plates, Wine Bars",206,4.1
+Hoogan et Beaufort,"4095 Rue Molson Montreal, QC H1Y 3L1 Canada",Montreal,QC,H1Y 3L1,45.54217661,-73.56347691,"Canadian (New), Breweries",91,4.5
+MajesThé,"2077 Boulevard Robert-Bourassa Montreal, QC H3A 2M3 Canada",Montreal,QC,H3A 2M3,45.50484,-73.572759,"Asian Fusion, Bubble Tea, Taiwanese",170,4.1
+Olive + Gourmando,"351 Rue Saint-Paul O Montreal, QC H2Y 2A7 Canada",Montreal,QC,H2Y 2A7,45.501197,-73.55647459,"Sandwiches, Breakfast & Brunch, Salad",1710,4.4
+Le Mousso,"1023 Rue Ontario E Montreal, QC H2L 1P8 Canada",Montreal,QC,H2L 1P8,45.52006,-73.56322,Canadian (New),57,4.5
+O'Thym,"1112 Boulevard de Maisonneuve E Montreal, QC H2L 1Z5 Canada",Montreal,QC,H2L 1Z5,45.518377,-73.558126,French,183,4.4
+Sparrow,"5322 Boulevard Saint-Laurent Montreal, QC H2T 1A5 Canada",Montreal,QC,H2T 1A5,45.52453,-73.59662,"Breakfast & Brunch, Cocktail Bars",211,4
+Queen Sheba,"4525 Avenue du Parc Montreal, QC H2V 4E4 Canada",Montreal,QC,H2V 4E4,45.51731,-73.58984,Ethiopian,72,4.5
+Pincette,"94 Rue Saint Paul E Montreal, QC H2Y 1G6 Canada",Montreal,QC,H2Y 1G6,45.5064,-73.55293,"Seafood, Wine Bars, Cocktail Bars",59,4.4
+Stash Café,"200 Rue Saint-Paul Ouest Montreal, QC H2Y 1Z9 Canada",Montreal,QC,H2Y 1Z9,45.50260615676877,-73.55518407,Polish,406,4.4
+N° 900,"444 Rue McGill Montreal, QC H2Y 2G1 Canada",Montreal,QC,H2Y 2G1,45.500436,-73.558316,Pizza,54,4.3
+Daldongnae - Montreal,"1216 Rue Bishop Montreal, QC H3G 2E3 Canada",Montreal,QC,H3G 2E3,45.49575,-73.5753,"Korean, Barbeque",100,4.3
+Mae Sri,"224 Rue Milton Montreal, QC H2X 1V6 Canada",Montreal,QC,H2X 1V6,45.51039,-73.57262,Thai,99,4
+Holder,"407 Rue McGill Montreal, QC H2Y 2G3 Canada",Montreal,QC,H2Y 2G3,45.50047,-73.55734,"French, Bars",393,4.2
+Le Serpent,"257 Rue Prince Montreal, QC H3C 2N4 Canada",Montreal,QC,H3C 2N4,45.49756372609497,-73.5568638,"Italian, Brasseries",174,4.5
+Chez Victoire,"1453 Avenue Mont-Royal E Montreal, QC H2J 1Z1 Canada",Montreal,QC,H2J 1Z1,45.53109931841519,-73.57652292,"French, Wine Bars",74,4.1
+Le Garde Côte,"112 Rue McGill Suite 1 Montreal, QC H2Y 2E5 Canada",Montreal,QC,H2Y 2E5,45.499486,-73.555543,"Mediterranean, Greek, Seafood",80,4.3
+Aux Vivres Plateau,"4631 Boulevard Saint-Laurent Montreal, QC H2T 1R2 Canada",Montreal,QC,H2T 1R2,45.5212392,-73.5883014,Vegan,426,4.2
+Ristorante Quattro,"17 Rue Notre-Dame O Montreal, QC H2Y 1B6 Canada",Montreal,QC,H2Y 1B6,45.50587,-73.556052,Italian,145,4.1
+KYO,"711 Côte de la Place d'Armes Montreal, QC H2Y 2X6 Canada",Montreal,QC,H2Y 2X6,45.50541,-73.55761,"Japanese, Sushi Bars",288,3.9
+Lattuca Barbecue,"15 Rue de la Commune O Montreal, QC H2Y 2C6 Canada",Montreal,QC,H2Y 2C6,45.50499,-73.5538,Barbeque,197,4.4
+Romados,"115 Rue Rachel E Montreal, QC H2W 1C8 Canada",Montreal,QC,H2W 1C8,45.519261587336665,-73.58070296,"Barbeque, Bakeries, Portuguese",558,4.2
+Jellyfish Crudo + Charbon,"626 Rue Marguerite d'Youville Montreal, QC H3C 1W7 Canada",Montreal,QC,H3C 1W7,45.49892624,-73.55434991,Modern European,94,4.3
+larrys,"5201 Boulevard Saint Laurent Montreal, QC H2T 1S4 Canada",Montreal,QC,H2T 1S4,45.52407441775497,-73.59469298,"Bars, Breakfast & Brunch",115,4.3
+Sansotei,"370 Rue Sainte-Catherine O Montreal, QC H3B 1A1 Canada",Montreal,QC,H3B 1A1,45.50561,-73.56712,"Beer, Wine & Spirits, Ramen",58,4.4
+Vices et Versa,"6631 Boulevard Saint-Laurent Montreal, QC H2S 3C5 Canada",Montreal,QC,H2S 3C5,45.5313378,-73.610497,"Poutineries, Brewpubs, Burgers",151,4.2
+Nora Gray,"1391 Rue Saint-Jacques Montreal, QC H3C 4J4 Canada",Montreal,QC,H3C 4J4,45.49303,-73.568495,Italian,122,4
+Bistro Tôt ou Tard,"1030 Rue Cherrier Montreal, QC H2L 1H7 Canada",Montreal,QC,H2L 1H7,45.52153,-73.56647,"French, Breakfast & Brunch",84,4.2
+Le Taj,"2077 Rue Stanley Montreal, QC H3A 1R7 Canada",Montreal,QC,H3A 1R7,45.50087,-73.57643,Indian,317,3.9
+Les Torchés,"74 Avenue du Mont-Royal E Montreal, QC H2T 1N7 Canada",Montreal,QC,H2T 1N7,45.5208508,-73.58559294,"Pubs, Tapas/Small Plates, Cocktail Bars",37,4.1
+L'Auberge Saint-Gabriel,"426 Rue Saint-Gabriel Montreal, QC H2Y 2Z9 Canada",Montreal,QC,H2Y 2Z9,45.50642,-73.55418,"Venues & Event Spaces, Canadian (New)",94,4
+Le 409,"409 Rue McGill Montreal, QC H2Y 2G3 Canada",Montreal,QC,H2Y 2G3,45.50053,-73.55772,"Gastropubs, Indian",58,4.3
+Jardin Nelson,"407 Place Jacques-Cartier Montreal, QC H2Y 3B1 Canada",Montreal,QC,H2Y 3B1,45.5079539,-73.55262224,"Creperies, Jazz & Blues",716,4.1
+Le Muscadin,"443 Rue Saint-Vincent Montreal, QC H2Y 3A6 Canada",Montreal,QC,H2Y 3A6,45.50749687716531,-73.5538224,Italian,41,5
+N° 900,"2049 Rue Peel Montreal, QC H3A 1T6 Canada",Montreal,QC,H3A 1T6,45.501393,-73.575449,Pizza,151,4.1
+Ta Pies,"4520 Avenue du Parc Montreal, QC H2V 4E3 Canada",Montreal,QC,H2V 4E3,45.51688,-73.590151,"Australian, Comfort Food, Desserts",137,4.5
+Gokudo,"630 Rue Cathcart Montreal, QC H3B 0C3 Canada",Montreal,QC,H3B 0C3,45.50303,-73.56838,"Cocktail Bars, Japanese, Speakeasies",68,4.6
+Maison Saint-Paul,"343 Rue Saint-Paul E Montreal, QC H2Y 1H2 Canada",Montreal,QC,H2Y 1H2,45.509204489716616,-73.5518333,"Champagne Bars, Seafood, Cocktail Bars",104,4.3
+Les Pyrénées,"320 Rue Saint-Paul O Montreal, QC H2Y 2A3 Canada",Montreal,QC,H2Y 2A3,45.50127,-73.55608,Spanish,185,4.1
+Crew Collective & Café,"360 Rue Saint-Jacques Suite G101 Montreal, QC H2Y 1P5 Canada",Montreal,QC,H2Y 1P5,45.502323,-73.559316,"Shared Office Spaces, Venues & Event Spaces, Cafes",425,4.3
+Le Speakeasy,"120 Rue McGill Montreal, QC H2Y 2E5 Canada",Montreal,QC,H2Y 2E5,45.49946,-73.5558,International,57,4.4
+Wienstein & Gavino's,"1434 Rue Crescent Montreal, QC H3G 2B6 Canada",Montreal,QC,H3G 2B6,45.49751251005118,-73.576754,"Italian, Wine Bars",285,3.8
+Sushi Momo Végétalien,"3609 Rue Saint-Denis Montreal, QC H2X 3L6 Canada",Montreal,QC,H2X 3L6,45.51811,-73.56943,"Japanese, Sushi Bars, Vegan",110,4.6
+Buvette Chez Simone,"4869 Avenue du Parc Montreal, QC H2V 4E7 Canada",Montreal,QC,H2V 4E7,45.51888,-73.59341,"Wine Bars, Tapas/Small Plates",122,4.3
+Le Colonel Moutarde,"4418 Rue Saint-Denis Montreal, QC H2J 2L1 Canada",Montreal,QC,H2J 2L1,45.52324,-73.5819,Canadian (New),27,4.5
+St-Viateur Bagel & Café,"1127 Avenue du Mont-Royal E Montreal, QC H2J 1X9 Canada",Montreal,QC,H2J 1X9,45.528427,-73.57911,"Bagels, Cafes",490,4
+India Rosa,"1241 Avenue du Mont-Royal E Montreal, QC H2J 1Y2 Canada",Montreal,QC,H2J 1Y2,45.529291,-73.578237,"Indian, Cocktail Bars, Tapas Bars",115,4
+Le Virunga,"851 Rue Rachel E Montreal, QC H2J 2H9 Canada",Montreal,QC,H2J 2H9,45.52409,-73.57633,African,43,4.7
+Nouilles de Lan Zhou,"1006 Boulevard Saint-Laurent Montreal, QC H2Z 1J4 Canada",Montreal,QC,H2Z 1J4,45.5077814,-73.559594,"Chinese, Noodles",730,4.3
+Boswell,"2407 Avenue du Mont-Royal E Montreal, QC H2H 1L2 Canada",Montreal,QC,H2H 1L2,45.5384,-73.56974,"Pubs, Brasseries, Breweries",46,4.3
+Lola Rosa,"276 Rue Sainte-Catherine O Montreal, QC H2X 2A1 Canada",Montreal,QC,H2X 2A1,45.50682,-73.56614,Vegan,93,4.4
+L'Usine de Spaghetti,"273 Rue Saint Paul E Montreal, QC H2Y 1H1 Canada",Montreal,QC,H2Y 1H1,45.5081154,-73.5523441,Italian,207,4
+Chez José Café,"173 Avenue Duluth E Montreal, QC H2W 1H4 Canada",Montreal,QC,H2W 1H4,45.51869,-73.57799,"Breakfast & Brunch, Sandwiches, Portuguese",152,4.3
+Pizzeria Dei Compari,"1668 Rue Saint-Denis Montreal, QC H2X 3K6 Canada",Montreal,QC,H2X 3K6,45.515,-73.56375,Pizza,95,4.1
+Eggspectation - Complexe Desjardins,"190 Rue Saint-Catherine O Montreal, QC H2X 2X3 Canada",Montreal,QC,H2X 2X3,45.50747533524907,-73.56566754,"Breakfast & Brunch, Burgers, American",474,4
+Mythos Ouzeri,"5318 Avenue Du Parc Montreal, QC H2V 4G7 Canada",Montreal,QC,H2V 4G7,45.52088,-73.59997,Greek,58,4.3
+Sammi & Soupe Dumpling,"1909 Rue Saint-Catherine O Montreal, QC H3H 2E8 Canada",Montreal,QC,H3H 2E8,45.492696,-73.580787,"Chinese, Dumplings, Asian Fusion",237,3.9
+Chez Delmo,"275 Rue Notre-Dame O Montreal, QC H2Y 1T8 Canada",Montreal,QC,H2Y 1T8,45.502845,-73.558353,"Seafood, French",104,4.3
+Le Vin Papillon,"2519 Rue Notre-Dame Ouest Montreal, QC H3J 1N4 Canada",Montreal,QC,H3J 1N4,45.48277,-73.5754852,"Canadian (New), Wine Bars",157,4.3
+QDC Burger,"210 Rue Saint Viateur O Montreal, QC H2T 2L5 Canada",Montreal,QC,H2T 2L5,45.523098,-73.601261,Burgers,29,4.7
+Le Pois Penché,"1230 Boulevard de Maisonneuve O Montreal, QC H3G 1M2 Canada",Montreal,QC,H3G 1M2,45.499511,-73.576242,Brasseries,181,3.8
+La Habanera,"1216 Avenue Union Montreal, QC H3B 3C4 Canada",Montreal,QC,H3B 3C4,45.50311,-73.56822,Cuban,87,4
+Chifa,"1080 Rue de Bleury Montreal, QC H2Z 1N2 Canada",Montreal,QC,H2Z 1N2,45.50441,-73.5637,Peruvian,54,4.3
+Café Parvis,"433 Rue Mayor Montreal, QC H3A Canada",Montreal,QC,H3A,45.505822,-73.569301,"Pizza, Cafes, Bars",233,4.1
+Sammi & Soupe Dumpling,"68 Rue de la Gauchetière O Montreal, QC H2Z 1C1 Canada",Montreal,QC,H2Z 1C1,45.50734,-73.5603,Dumplings,67,4.3
+Jun I,"156 Avenue Laurier O Montreal, QC H2T 2N7 Canada",Montreal,QC,H2T 2N7,45.521119,-73.594311,"Sushi Bars, Japanese",96,4.1
+Pizzeria Bros,"13 Rue Notre-Dame O Montreal, QC H2Y 1S5 Canada",Montreal,QC,H2Y 1S5,45.50586101,-73.5559096,Pizza,136,4.4
+Le Red Tiger,"1201 Boulevard de Maisonneuve E Montreal, QC H2L 2A1 Canada",Montreal,QC,H2L 2A1,45.519202,-73.557836,"Vietnamese, Pubs, Cocktail Bars",144,3.9
+Pamika Thai,"4902 Boulevard Saint-Laurent Montreal, QC H2T 1R5 Canada",Montreal,QC,H2T 1R5,45.52205,-73.59123,"Thai, Barbeque, Cocktail Bars",24,4.3
+La Fabrique,"3609 Rue St-Denis Montreal, QC H2X 3L6 Canada",Montreal,QC,H2X 3L6,45.51811,-73.56943,French,118,4.2
+Impasto,"48 Rue Dante Montreal, QC H2S 1J5 Canada",Montreal,QC,H2S 1J5,45.53314,-73.61323,Italian,87,4.2
+LOV McGill,"464 Rue McGill Montreal, QC H2Y 2H2 Canada",Montreal,QC,H2Y 2H2,45.5005534,-73.5590512,"Vegan, Vegetarian, Breakfast & Brunch",288,4
+Restaurant Alep,"199 Rue Jean-Talon E Montreal, QC H2R 1S8 Canada",Montreal,QC,H2R 1S8,45.5364999,-73.61646,"Middle Eastern, Syrian",48,4.6
+Casa Minhota,"3959 Boulevard Saint-Laurent Montreal, QC H2W 1Y4 Canada",Montreal,QC,H2W 1Y4,45.51664,-73.57791,Portuguese,49,4
+L'Amère à Boire,"2049 Rue Saint-Denis Montreal, QC H2X 3K8 Canada",Montreal,QC,H2X 3K8,45.51642,-73.566042,"Tapas Bars, Brewpubs",69,4
+Marcus Restaurant + Terrace,"1440 Rue de la Montagne Montreal, QC H3G 1Z5 Canada",Montreal,QC,H3G 1Z5,45.498525,-73.5764919,"Breakfast & Brunch, Cocktail Bars, Tapas/Small Plates",91,3.8
+KazaMaza,"4629 av du parc Montreal, QC H2V 4E4 Canada",Montreal,QC,H2V 4E4,45.517858,-73.591312,Middle Eastern,143,4.1
+Boustan,"2020 Rue Crescent Montreal, QC H3G 2B8 Canada",Montreal,QC,H3G 2B8,45.49792,-73.57789,"Middle Eastern, Mediterranean",470,4.2
+Bar Pamplemousse,"1579 Boulevard Saint-Laurent Montreal, QC H2X 2S9 Canada",Montreal,QC,H2X 2S9,45.51097,-73.56564,"Beer Bar, Gastropubs, Caribbean",48,4.1
+Plein Sud,"5064 Avenue Papineau Montreal, QC H2H 1V8 Canada",Montreal,QC,H2H 1V8,45.5354763,-73.5807972,"French, Wine Bars, Tapas/Small Plates",62,4.5
+Brit & Chips,"433 Rue McGill Montreal, QC H2Y 2H1 Canada",Montreal,QC,H2Y 2H1,45.50074,-73.55806,"British, Fish & Chips",319,4.2
+Wilensky,"34 Avenue Fairmount Ouest Montreal, QC H2T 2M1 Canada",Montreal,QC,H2T 2M1,45.52331,-73.59472,Delis,144,4.4
+Philinos,"4806 Avenue du Parc Montreal, QC H2V 4E7 Canada",Montreal,QC,H2V 4E7,45.5181084,-73.5929718,Greek,30,4.3
+Chez Suzette,"3 Rue Saint-Paul E Montreal, QC H2Y 1E9 Canada",Montreal,QC,H2Y 1E9,45.505754,-73.553824,"Creperies, Desserts, Fondue",518,3.7
+Le Butterblume,"5836 Boulevard Saint-Laurent Montreal, QC H2T 1T3 Canada",Montreal,QC,H2T 1T3,45.52750899999999,-73.60300732,"Cafes, Breakfast & Brunch, Flowers & Gifts",90,4.3
+Darbar,"2027 Boulevard Saint-Laurent Montreal, QC H2X 1G3 Canada",Montreal,QC,H2X 1G3,45.51174,-73.56731,Indian,328,4.1
+Place Carmin,"740 Rue William Montreal, QC H3C 1P1 Canada",Montreal,QC,H3C 1P1,45.49820816147015,-73.55760661,"French, Bars, Seafood",55,4.7
+Fabergé,"25 Avenue Fairmount O Montreal, QC H2T 2L9 Canada",Montreal,QC,H2T 2L9,45.52351,-73.594997,"Breakfast & Brunch, Creperies",428,4
+Jano Grillades,"3883 Boulevard Saint Laurent Montreal, QC H2W 1X9 Canada",Montreal,QC,H2W 1X9,45.51623,-73.57725,"Portuguese, Barbeque",88,4.1
+Breizh Café,"3991 Boulevard Saint-Laurent Montreal, QC H2W 1Y4 Canada",Montreal,QC,H2W 1Y4,45.5167034,-73.5787906,"Creperies, Breakfast & Brunch",103,4.5
+Siam,"1325 Boulevard René-Lévesque O Montreal, QC H3G 0A1 Canada",Montreal,QC,H3G 0A1,45.496606,-73.572863,Thai,114,4.1
+Helena,"438 McGill Montreal, QC H2Y 2G5 Canada",Montreal,QC,H2Y 2G5,45.5002799,-73.55837,"Portuguese, Seafood",102,4.2
+Caifan Tacos Bar,"4542 Saint Denis Street Montreal, QC H2S 1R1 Canada",Montreal,QC,H2S 1R1,45.5241886,-73.5837526,Mexican,19,4.6
+Restaurant Atma,"3962 Boulevard Saint-Laurent Montreal, QC H2W 1Y3 Canada",Montreal,QC,H2W 1Y3,45.5166568,-73.579113,Indian,79,3.9
+C'ChoColat,"1255 Rue Bishop Montreal, QC H3G 2E2 Canada",Montreal,QC,H3G 2E2,45.49622,-73.57531,"Chocolatiers & Shops, Creperies, Sandwiches",265,4.2
+Le Central,"30 Rue Sainte-Catherine O Montreal, QC H2X 3V4 Canada",Montreal,QC,H2X 3V4,45.50930935934862,-73.56292127,"Desserts, Food Court, Poutineries",43,4.4
+Isle de Garde,"1039 Rue Beaubien Est Montreal, QC H2S 1T3 Canada",Montreal,QC,H2S 1T3,45.53756,-73.60205,Brasseries,69,4.2
+Nos Thés,"1609 Rue Sainte-Catherine Ouest Montreal, QC H3H 2S7 Canada",Montreal,QC,H3H 2S7,45.494956,-73.57826,"Taiwanese, Tea Rooms",174,3.8
+Resto Keela,"1237 Rue Atateken Montreal, QC H2L 3K9 Canada",Montreal,QC,H2L 3K9,45.516995,-73.5556896,"Modern European, Cocktail Bars",14,4.9
+Aldea,"4403 Boulevard Saint-Laurent Montreal, QC H2W 1Z8 Canada",Montreal,QC,H2W 1Z8,45.5194123,-73.58485345,Portuguese,24,4.5
+La Finca,"1067 Rue de Bleury Montreal, QC H2Z 1N1 Canada",Montreal,QC,H2Z 1N1,45.50432799,-73.56288437,"Breakfast & Brunch, Venues & Event Spaces, Cafes",184,4.5
+Le Rouge Gorge,"1234 Mont-royal E Montreal, QC H2J 1Y2 Canada",Montreal,QC,H2J 1Y2,45.52911175,-73.57797816,"Wine Bars, Tapas/Small Plates",35,4.3
+Allô! Mon Coco,"70 Rue Sainte-Catherine E Montreal, QC H2X 1K6 Canada",Montreal,QC,H2X 1K6,45.51059,-73.56296,Breakfast & Brunch,127,4.1
+Cuisine AuntDai,"1448 Rue Saint Mathieu Montreal, QC H3H 2H9 Canada",Montreal,QC,H3H 2H9,45.49425,-73.58048,Chinese,91,4.3
+Restaurant Fleurs et Cadeaux,"1002 Rue Saint-Urbain Montreal, QC H2Z 1K6 Canada",Montreal,QC,H2Z 1K6,45.506561,-73.560507,"Japanese, Wine Bars, Cafes",25,4.6
+Foxy,"1638 Rue Notre-Dame O Montreal, QC H3J 1M1 Canada",Montreal,QC,H3J 1M1,45.489415,-73.567583,Canadian (New),143,4.1
+Portus360,"777 Boulevard Robert-Bourassa Montreal, QC H3C 3Z7 Canada",Montreal,QC,H3C 3Z7,45.49997,-73.56242,Portuguese,80,3.8
+Singh's,"3712 Boulevard Saint-Laurent Montreal, QC H2X 2V4 Canada",Montreal,QC,H2X 2V4,45.51456,-73.57461,Indian,112,4
+Café St-Barth,"3500 Avenue du Parc Montreal, QC H2X 2H7 Canada",Montreal,QC,H2X 2H7,45.509475,-73.573846,"Cafes, Breakfast & Brunch, Juice Bars & Smoothies",50,4.6
+Palme,"1487 Rue Sainte-Catherine E Montreal, QC H2L 2H9 Canada",Montreal,QC,H2L 2H9,45.52111,-73.55408,"Cajun/Creole, Caribbean",26,4.5
+Ye Olde Orchard,"20 Rue Prince Arthur Montreal, QC H2X 1S3 Canada",Montreal,QC,H2X 1S3,45.51343,-73.5726,"Barbeque, Irish Pub",56,4
+Montréal Plaza,"6230 Rue Saint-Hubert Montreal, QC H2S 2M2 Canada",Montreal,QC,H2S 2M2,45.534836,-73.600521,Canadian (New),116,4.5
+Che Churros & Empanadas,"100 Rue Marie-Anne O Montreal, QC H2W 1B9 Canada",Montreal,QC,H2W 1B9,45.51767,-73.58522,Argentine,25,4.8
+L’Entrepôt - Mont-Royal,"1019 Avenue du Mont-Royal E Montreal, QC H2J 1X7 Canada",Montreal,QC,H2J 1X7,45.527648,-73.579729,"Bars, Comfort Food, American",142,3.8
+Dandy,"244 Rue Saint-Jacques Montreal, QC H2Y 1L9 Canada",Montreal,QC,H2Y 1L9,45.5033,-73.55857,Breakfast & Brunch,152,4.5
+Pizzeria Magpie,"16 Rue Maguire Montreal, QC H2T 1B8 Canada",Montreal,QC,H2T 1B8,45.52461,-73.59544,Pizza,99,3.9
+Fenêtre sur Kaboul,"901 Rue Rachel E Montreal, QC H2J 2J2 Canada",Montreal,QC,H2J 2J2,45.5244041,-73.5759533,"Afghan, Tea Rooms",65,4.3
+Jacopo,"436 Place Jacques-Cartier Montreal, QC H2Y 3B3 Canada",Montreal,QC,H2Y 3B3,45.50772,-73.553255,"Cocktail Bars, Italian",105,3.8
+Shawarmaz,"1340 Saint-Catherine Street West Montreal, QC H3G 1P6 Canada",Montreal,QC,H3G 1P6,45.4973876,-73.57524787,"Middle Eastern, Mediterranean",184,4.1
+Pikolo Espresso Bar,"1635 Rue Clark Montreal, QC H2X 2R4 Canada",Montreal,QC,H2X 2R4,45.510731,-73.5667499,"Coffee & Tea, Breakfast & Brunch",316,4.3
+Ibérica,"1450 Rue Peel Montreal, QC H3A Canada",Montreal,QC,H3A,45.50047,-73.57449,Tapas/Small Plates,77,3.9
+Nil Bleu,"3706 Rue Saint-Denis Montreal, QC H2X 3L7 Canada",Montreal,QC,H2X 3L7,45.51834,-73.57125,"Ethiopian, Vegan",153,4
+Acajou Br,"3425A Rue St-Denis Montreal, QC H2X 3L1 Canada",Montreal,QC,H2X 3L1,45.51743,-73.56797,"Brazilian, Tapas/Small Plates",64,4.1
+Poutineville,"5145 Avenue du Parc Montreal, QC H2V 4G3 Canada",Montreal,QC,H2V 4G3,45.5202,-73.5966,Poutineries,42,4.2
+L'Gros Luxe Mile End,"150 Rue Bernard O Montreal, QC H2T 2K2 Canada",Montreal,QC,H2T 2K2,45.52525,-73.60387,"Cocktail Bars, Breakfast & Brunch, Canadian (New)",87,3.9
+La Raclette,"1059 Rue Gilford Montreal, QC H2J 1P7 Canada",Montreal,QC,H2J 1P7,45.52955038,-73.58275711,"Fondue, French",56,4.4
+Vieux-Port Steakhouse,"39 Rue Saint Paul E Montreal, QC H2Y 1G2 Canada",Montreal,QC,H2Y 1G2,45.50617298,-73.55358847,"Venues & Event Spaces, Steakhouses",328,3.6
+Liverpool House,"2501 Rue Notre-Dame O Montreal, QC H3J 1N6 Canada",Montreal,QC,H3J 1N6,45.4828859,-73.5752899,French,338,4.2
+Gyubee Japanese Grill - Montreal,"1836 Sainte-Catherine Street West Montreal, QC H3H 1M1 Canada",Montreal,QC,H3H 1M1,45.4931297,-73.57967108,"Japanese, Barbeque",26,4.6
+Le Cartet,"106 McGill Street Montreal, QC H2Y 2E5 Canada",Montreal,QC,H2Y 2E5,45.4994451,-73.5553447,"French, Breakfast & Brunch, Delicatessen",558,4.2
+Thammada,"1205 Avenue Bernard O Montreal, QC H2V 1V5 Canada",Montreal,QC,H2V 1V5,45.52049,-73.60868,Thai,50,4.5
+Keung Kee,"70 Rue de la Gauchetière O Montreal, QC H2Z 1C1 Canada",Montreal,QC,H2Z 1C1,45.50725,-73.56036,Cantonese,133,3.8
+Maestro SVP,"3615 Boulevard Saint-Laurent Montreal, QC H2X 1V5 Canada",Montreal,QC,H2X 1V5,45.514196,-73.5729452,"Seafood, Live/Raw Food",127,3.8
+Hà,"243 Avenue Mont-Royal O Montreal, QC H2T 2T2 Canada",Montreal,QC,H2T 2T2,45.51778,-73.58888,"Vietnamese, Laotian",98,3.9

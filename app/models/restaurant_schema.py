@@ -11,3 +11,4 @@ class RestaurantSchema(Schema):
     cuisine_type = fields.String(required=True, error_messages={"required": "Cuisine type is required."})
     review_count = fields.Integer(required=True, error_messages={"required": "Review count is required."})
     rating = fields.Float(required=True, error_messages={"required": "Rating is required."})
+    food_time = fields.String(required=True, error_messages={"required": "Food time is required."})
