@@ -1,5 +1,5 @@
 ####
-@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMDkwNTc5MiwianRpIjoiYmI2ZWJlN2QtYWNlNi00YjZkLTkwODgtMjRhMmE5YTJiZTFlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY3MmIxZjAxMDJhMTlkMWYyMGE5OGRlNCIsIm5iZiI6MTczMDkwNTc5MiwiY3NyZiI6IjQ2Y2NhYTBhLTJmZDYtNDM5My04YTQzLTk4ZGIwYTlhMzc4YSIsImV4cCI6MTczMDk5MjE5Mn0.-cqw-bxkXVusBEM2KmpHuFN3Bp9vvzUoimgbiqI7kcY
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMTIwNjQzMCwianRpIjoiMjdjNmRjYzEtNmMwMC00NGQ4LTgwODgtM2M2Nzg1Y2RiNzFjIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY3MmIxZjAxMDJhMTlkMWYyMGE5OGRlNCIsIm5iZiI6MTczMTIwNjQzMCwiY3NyZiI6IjBlMWNkZjEyLTcyMzQtNGJmZi1hZGVjLTc0OTM1ZDU3NmY0OCIsImV4cCI6MTczMTI5MjgzMH0.B4SP_NZUvToS4MB3Ps7J7yGzPertiEvJAQufCNgxKEs
 #####
 
 POST http://127.0.0.1:5000/user/update_profile 
@@ -72,6 +72,25 @@ Content-Type: application/json
 }
 
 
+
+### Remove a preferece
+
+POST  http://127.0.0.1:5000/user/remove_preferences
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "category": "cuisines",
+    "items": ["Mexican"]
+}
+
+
+# {
+#     "category": "visited_places",
+#     "items": [
+#         {"name": "Montreal Museum of Fine Arts"}
+#     ]
+# }
 
 # {
 #    "cuisines": ["French", "Canadian", "Breakfast"],

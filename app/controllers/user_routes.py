@@ -59,5 +59,24 @@ def create_user_routes(db):
         # Call the service method, passing the unique_id and rating
         response, status_code = user_service.rate_place(user_id, unique_id, rating)
         return jsonify(response), status_code
+    
+    @user_routes.route('/remove_preferences', methods=['POST'])
+    @jwt_required()
+    def remove_preferences():
+        user_id = get_jwt_identity()
+        user_id = ObjectId(user_id)
+
+        data = request.get_json()
+        if not data or "category" not in data or "items" not in data:
+            return jsonify({"error": "Category and items are required"}), 400
+
+        category = data["category"]
+        items = data["items"]
+
+        # Call the service method to remove items
+        response, status_code = user_service.remove_preferences(user_id, category, items)
+        return jsonify(response), status_code
+
+    return user_routes
 
     return user_routes
