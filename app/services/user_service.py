@@ -118,6 +118,36 @@ class UserService:
                 place['unique_id'] = str(place['unique_id'])
 
         return preferences, 200
+    
+    def remove_preferences(self, user_id, category, items):
+            try:
+                # Validate category
+                if category not in ["visited_places", "indoor_activities", "outdoor_activities", "cuisines"]:
+                    return {"error": "Invalid category"}, 400
+
+                # Prepare the update operation based on category
+                update_operation = {}
+                if category == "visited_places":
+                    # Remove specific places by "name" in visited_places
+                    update_operation = {"$pull": {category: {"name": {"$in": [item["name"] for item in items]}}}}
+                else:
+                    # Remove specific items in cuisines, indoor_activities, or outdoor_activities
+                    update_operation = {"$pull": {category: {"$in": items}}}
+
+                # Perform the update
+                updated = self.db.user_preferences.update_one(
+                    {"user_id": ObjectId(user_id)},
+                    update_operation
+                )
+
+                if updated.modified_count > 0:
+                    return {"message": f"{category.capitalize()} items removed successfully"}, 200
+                else:
+                    return {"error": "No matching items found or no changes made"}, 404
+
+            except Exception as e:
+                print(f"Error in remove_preferences: {str(e)}")
+                return {"error": "Internal server error"}, 500
 
     def rate_place(self, user_id, unique_id, rating=None):
         try:
@@ -155,3 +185,5 @@ class UserService:
         except Exception as e:
             print(f"Error in rate_place: {str(e)}")
             return {"error": "Internal server error"}, 500
+        
+        
