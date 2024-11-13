@@ -1,0 +1,11 @@
+######
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMTQ4NDI2NCwianRpIjoiYzMxMDk3OTctNGMwNS00ZjZiLWEzNDQtZmQxY2E1Yjk4YzdiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY3MmIxZjAxMDJhMTlkMWYyMGE5OGRlNCIsIm5iZiI6MTczMTQ4NDI2NCwiY3NyZiI6IjI2YWNlMjQwLTIxOTItNGZlNC04YWU3LTZiMWMzY2QxNDU2OSIsImV4cCI6MTczMTU3MDY2NH0.V_IeiP2llBGWMOIA7qs71iVvA98pPNnOZQ4GidTuDOw
+
+######
+### get all recomendations
+GET http://localhost:5000/notifications/get_notifications
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+
+
