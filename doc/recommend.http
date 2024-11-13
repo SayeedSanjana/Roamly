@@ -1,5 +1,5 @@
 ######
-@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMDg3OTIzNywianRpIjoiYzBlMjMxNzEtNGRiYy00M2ZmLTg0N2EtOWM1YWYwMGM0NzU1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY3MmIxZjAxMDJhMTlkMWYyMGE5OGRlNCIsIm5iZiI6MTczMDg3OTIzNywiY3NyZiI6ImJkNzkzYjczLWMxOTUtNGM2OC1hODBhLTA4OTBmMmY0ZjI0ZCIsImV4cCI6MTczMDk2NTYzN30.xEzMAN77XmkPEwMUYiaNKtxHhapqprvDWhZ7jhTym9Q
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMTQ4NDI2NCwianRpIjoiYzMxMDk3OTctNGMwNS00ZjZiLWEzNDQtZmQxY2E1Yjk4YzdiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY3MmIxZjAxMDJhMTlkMWYyMGE5OGRlNCIsIm5iZiI6MTczMTQ4NDI2NCwiY3NyZiI6IjI2YWNlMjQwLTIxOTItNGZlNC04YWU3LTZiMWMzY2QxNDU2OSIsImV4cCI6MTczMTU3MDY2NH0.V_IeiP2llBGWMOIA7qs71iVvA98pPNnOZQ4GidTuDOw
 
 ######
 
@@ -15,8 +15,8 @@ Content-Type: application/json
 
 {
   "location": [45.514580, -73.571650],  
-  "time": "05:30 PM",               
- "weather": "sunny"                  
+  "time": "08:30 PM",               
+  "weather": "clear"                 
 }
 
 
