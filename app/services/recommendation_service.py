@@ -1,12 +1,73 @@
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import math
+import logging
+from bson import ObjectId
+from flask_socketio import emit
+
+from app.services import notification_service # type: ignore
+
+# Set up a logger for the application
+logging.basicConfig(level=logging.INFO)
+LOGGER = logging.getLogger(__name__)
 
 class RecommendationService:
-    def __init__(self, db):
+    def __init__(self, db, socketio):
         self.db = db
+        self.socketio = socketio  # Inject Socket.IO instance
+        self.last_context = {}    # Dictionary to track user's last known context
+        self.notification_service = notification_service
 
     def get_user_preferences(self, user_id):
         return self.db.user_preferences.find_one({"user_id": user_id})
+    
+    def has_context_changed(self, user_id, current_location, current_time, weather):
+        last_context = self.db.user_context.find_one({"user_id": ObjectId(user_id)})
+
+        if not last_context:
+            self.db.user_context.insert_one({
+                "user_id": ObjectId(user_id),
+                "location": current_location,
+                "time": current_time,
+                "weather": weather,
+                "updated_at": datetime.now(timezone.utc)
+            })
+            return True
+
+        context_changed = (
+            last_context["location"] != current_location or
+            last_context["time"] != current_time or
+            last_context["weather"] != weather
+        )
+
+        if context_changed:
+            self.db.user_context.update_one(
+                {"user_id": ObjectId(user_id)},
+                {"$set": {
+                    "location": current_location,
+                    "time": current_time,
+                    "weather": weather,
+                    "updated_at": datetime.now(timezone.utc)
+                }}
+            )
+            logging.info(f"Updated context for user {user_id} in the database.")
+
+            # Emit notification to the specific user's room
+            message = "Your recommendations have been updated based on your new context."
+            logging.info(f"Emitting notification for user {user_id}: {message}")
+            self.socketio.emit(
+                'notification',
+                {'message': message},
+                room=str(user_id)  # Emit to the room named after the user ID
+            )
+            return True
+
+        return False
+
+    # Remove duplicate send_notification definition, and use it as needed
+    def send_notification(self, user_id, message):
+        logging.info(f"Sending notification to user {user_id}: {message}")
+        self.socketio.emit('notification', {'message': message}, room=str(user_id))
+
   
     def get_similar_users_recommendations(self, user_id):
         # Get the current user's preferences and visited places with ratings
@@ -174,8 +235,14 @@ class RecommendationService:
                 nearby_recommendations.append(rec)
 
         return nearby_recommendations
+    
+
 
     def get_recommendations(self, user_id, current_location, current_time, weather):
+        # Call `has_context_changed` to update context and send notification if necessary
+        self.has_context_changed(user_id, current_location, current_time, weather)
+
+        # Proceed with generating and returning recommendations regardless of context change
         user_preferences = self.get_user_preferences(user_id)
         if not user_preferences:
             return {"error": "User preferences not found"}, 404
@@ -188,17 +255,18 @@ class RecommendationService:
             all_personalized_recs, current_time, weather, user_preferences.get("preferred_meal_time", [])
         )
 
-        # Retrieve popular restaurants, indoor, and outdoor activities with types based on collection
+        # Retrieve popular recommendations
         popular_recs = (
             [{"type": "restaurant", **rec} for rec in self.db.restaurants.find().sort("rating", -1).limit(5)] +
             [{"type": "indoor", **rec} for rec in self.db.indoor_activities.find().sort("rating", -1).limit(5)] +
             [{"type": "outdoor", **rec} for rec in self.db.outdoor_activities.find().sort("rating", -1).limit(5)]
         )
 
+        # Filter nearby recommendations
         personalized_nearby_recs = self.filter_nearby_places(prioritized_personalized_recs, current_location)
         popular_nearby_recs = self.filter_nearby_places(popular_recs, current_location)
 
-        # Convert ObjectId to string for JSON serialization
+        # Serialize ObjectId for JSON
         def serialize_object_id(recommendations):
             for rec in recommendations:
                 if "_id" in rec:
