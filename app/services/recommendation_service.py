@@ -4,9 +4,40 @@ import math
 class RecommendationService:
     def __init__(self, db):
         self.db = db
+        self.last_context = {}  # Dictionary to track the last context for each user
 
     def get_user_preferences(self, user_id):
         return self.db.user_preferences.find_one({"user_id": user_id})
+    
+    def has_context_changed(self, user_id, current_location, current_time, weather):
+        # Check if the user has previous context data
+        last_context = self.last_context.get(user_id)
+
+        # If no previous context, consider it as changed
+        if not last_context:
+            self.last_context[user_id] = {
+                "location": current_location,
+                "time": current_time,
+                "weather": weather
+            }
+            return True
+
+        # Compare current context with the last known context
+        context_changed = (
+            last_context["location"] != current_location or
+            last_context["time"] != current_time or
+            last_context["weather"] != weather
+        )
+
+        # Update the last known context if changed
+        if context_changed:
+            self.last_context[user_id] = {
+                "location": current_location,
+                "time": current_time,
+                "weather": weather
+            }
+
+        return context_changed
   
     def get_similar_users_recommendations(self, user_id):
         # Get the current user's preferences and visited places with ratings
@@ -176,6 +207,11 @@ class RecommendationService:
         return nearby_recommendations
 
     def get_recommendations(self, user_id, current_location, current_time, weather):
+        # Check if context (location, time, weather) has changed
+        if not self.has_context_changed(user_id, current_location, current_time, weather):
+            return {"message": "No changes in context, recommendations remain the same"}, 200
+
+        # Proceed with generating recommendations if context has changed
         user_preferences = self.get_user_preferences(user_id)
         if not user_preferences:
             return {"error": "User preferences not found"}, 404
