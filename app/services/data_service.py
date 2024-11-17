@@ -3,6 +3,7 @@ from app.models.restaurant_schema import RestaurantSchema
 from app.models.dummy_users_schema import DummyUserVisitsSchema
 from app.models.indoor_activities_schema import IndoorActivitiesSchema
 from app.models.outdoor_activities_schema import OutdoorActivitiesSchema
+from app.models.transportation_schema import TransportationSchema  # Import the new schema
 
 class DataService:
     def __init__(self, db):
@@ -11,13 +12,15 @@ class DataService:
         self.dummy_user_visits_schema = DummyUserVisitsSchema()
         self.indoor_activities_schema = IndoorActivitiesSchema()
         self.outdoor_activities_schema = OutdoorActivitiesSchema()
+        self.transportation_schema = TransportationSchema()  # Initialize TransportationSchema
 
     def load_data(self):
         # Load CSV files
-        dummy_user_visits = pd.read_csv('dummy_user_visits.csv',encoding='latin1')
-        indoor_activities = pd.read_csv('indoor_activities.csv',encoding='latin1')
-        outdoor_activities = pd.read_csv('outdoor_activities.csv',encoding='latin1')
-        restaurants = pd.read_csv('restaurants.csv',encoding='latin1')
+        dummy_user_visits = pd.read_csv('dummy_user_visits.csv', encoding='latin1')
+        indoor_activities = pd.read_csv('indoor_activities.csv', encoding='latin1')
+        outdoor_activities = pd.read_csv('outdoor_activities.csv', encoding='latin1')
+        restaurants = pd.read_csv('restaurants.csv', encoding='latin1')
+        transportation = pd.read_csv('transportation.csv', encoding='latin1')  # Load transportation data
 
         # Rename columns to match schema field names
         restaurants = restaurants.rename(columns={
@@ -31,7 +34,7 @@ class DataService:
             'Cuisine Type': 'cuisine_type',
             'Review Count': 'review_count',
             'Rating': 'rating',
-            'Foodtime':'food_time'
+            'Foodtime': 'food_time'
         })
 
         dummy_user_visits = dummy_user_visits.rename(columns={
@@ -67,6 +70,19 @@ class DataService:
             'Category': 'category'
         })
 
+        transportation = transportation.rename(columns={  # Rename transportation columns to match schema
+            'Name': 'name',
+            'Address': 'address',
+            'City': 'city',
+            'State': 'state',
+            'Zip Code': 'zip_code',
+            'Latitude': 'latitude',
+            'Longitude': 'longitude',
+            'Category': 'category',
+            'Review Count': 'review_count',
+            'Rating': 'rating'
+        })
+
         # Function to validate and insert data
         def insert_data(collection, data, schema):
             valid_data = []
@@ -86,5 +102,6 @@ class DataService:
         insert_data("indoor_activities", indoor_activities.to_dict('records'), self.indoor_activities_schema)
         insert_data("outdoor_activities", outdoor_activities.to_dict('records'), self.outdoor_activities_schema)
         insert_data("restaurants", restaurants.to_dict('records'), self.restaurant_schema)
+        insert_data("transportation", transportation.to_dict('records'), self.transportation_schema)  # Insert transportation data
 
         return {"message": "Data insertion completed successfully!"}

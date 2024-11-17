@@ -216,7 +216,7 @@ class RecommendationService:
     def filter_nearby_places(self, recommendations, current_location):
         """
         Filter Recommendations Based on Proximity:
-        - Use Haversine formula to calculate distance between current location and place
+        - Include latitude, longitude, and address in the results.
         """
         def haversine(lat1, lon1, lat2, lon2):
             R = 6371  # Earth radius in kilometers
@@ -232,17 +232,52 @@ class RecommendationService:
             distance = haversine(lat1, lon1, rec["latitude"], rec["longitude"])
             if distance <= 10:
                 rec["distance"] = round(distance, 2)  # Add distance to each recommendation
+                # Ensure address is included in the recommendation
+                rec["address"] = rec.get("address", "Address not available")
                 nearby_recommendations.append(rec)
 
         return nearby_recommendations
     
 
+    def get_transportation_recommendations(self, recommendations):
+        def fetch_nearby_transport(lat, lon, distance_km=1.0):
+            def haversine(lat1, lon1, lat2, lon2):
+                R = 6371  # Earth radius in kilometers
+                d_lat = math.radians(lat2 - lat1)
+                d_lon = math.radians(lon2 - lon1)
+                a = (math.sin(d_lat / 2) ** 2 +
+                    math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) * math.sin(d_lon / 2) ** 2)
+                return 2 * R * math.atan2(math.sqrt(a), math.sqrt(1 - a))
 
+            transport_list = []
+            transports = self.db.transportation.find({}, {
+                "_id": 1,
+                "name": 1,
+                "latitude": 1,
+                "longitude": 1,
+                "address": 1,
+                "category": 1,
+                "rating": 1
+            })
+            for transport in transports:
+                dist = haversine(lat, lon, transport["latitude"], transport["longitude"])
+                if dist <= distance_km:
+                    transport["distance"] = round(dist, 2)
+                    transport["address"] = transport.get("address", "Address not available")  # Ensure address is added
+                    transport_list.append(transport)
+            return transport_list
+
+        for rec in recommendations:
+            rec["transportation"] = fetch_nearby_transport(rec["latitude"], rec["longitude"])
+            rec["address"] = rec.get("address", "Address not available")  # Add address to the main recommendation
+
+        return recommendations
+    
     def get_recommendations(self, user_id, current_location, current_time, weather):
         # Call `has_context_changed` to update context and send notification if necessary
         self.has_context_changed(user_id, current_location, current_time, weather)
 
-        # Proceed with generating and returning recommendations regardless of context change
+        # Generate recommendations
         user_preferences = self.get_user_preferences(user_id)
         if not user_preferences:
             return {"error": "User preferences not found"}, 404
@@ -266,11 +301,19 @@ class RecommendationService:
         personalized_nearby_recs = self.filter_nearby_places(prioritized_personalized_recs, current_location)
         popular_nearby_recs = self.filter_nearby_places(popular_recs, current_location)
 
+        # Add transportation recommendations
+        personalized_nearby_recs = self.get_transportation_recommendations(personalized_nearby_recs)
+        popular_nearby_recs = self.get_transportation_recommendations(popular_nearby_recs)
+
         # Serialize ObjectId for JSON
         def serialize_object_id(recommendations):
             for rec in recommendations:
                 if "_id" in rec:
                     rec["_id"] = str(rec["_id"])
+                if "transportation" in rec:
+                    for transport in rec["transportation"]:
+                        transport["_id"] = str(transport["_id"])
+                rec["address"] = rec.get("address", "Address not available")  # Include address explicitly
             return recommendations
 
         personalized_nearby_recs = serialize_object_id(personalized_nearby_recs)
