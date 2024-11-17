@@ -1,8 +1,13 @@
+import os
+import sys
 import requests
 import csv
 import time
 
-from config import Config
+# Add the Roamly root directory to sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+from app.config import Config  # Correct import path
 
 # Replace 'YOUR_API_KEY' with your actual Yelp API key
 HEADERS = {'Authorization': f'Bearer {Config.YELP_API_KEY}'}

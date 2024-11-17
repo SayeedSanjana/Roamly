@@ -16,7 +16,7 @@ Content-Type: application/json
 {
   "location": [45.514580, -73.571650],  
   "time": "5:00 PM",               
-  "weather": "sunny"                 
+  "weather": "rainy"                 
 }
 
 
