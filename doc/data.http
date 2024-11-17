@@ -1,3 +1,27 @@
 ### Load Data
 POST http://localhost:5000/data/load_data
 Content-Type: application/json
+
+### Get all restaurants
+GET http://localhost:5000/data/get_restaurants
+Content-Type: application/json
+
+### Get all indoor activities
+GET http://localhost:5000/data/get_indoor_activities
+Content-Type: application/json
+
+### Get all outdoor activites activities
+GET http://localhost:5000/data/get_outdoor_activities
+Content-Type: application/json
+
+### Get Unique Cuisines
+GET http://localhost:5000/data/get_cuisines
+Content-Type: application/json
+
+### Get Unique Indoor Categories
+GET http://localhost:5000/data/get_indoor_categories
+Content-Type: application/json
+
+### Get Unique Outdoor Categories
+GET http://localhost:5000/data/get_outdoor_categories
+Content-Type: application/json
