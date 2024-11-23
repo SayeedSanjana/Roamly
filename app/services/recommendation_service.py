@@ -205,7 +205,7 @@ class RecommendationService:
 
         # If not meal time or no matches found, prioritize based on weather
         if not is_meal_time or not prioritized:
-            if weather in ["rainy", "snowy", "windy", "cloudy"]:
+            if weather in ["rainy", "snowy", "windy", "cloudy","clouds","snow","thunderstorm","tornado","squail","drizzle"]:
                 prioritized.extend([rec for rec in recommendations if rec.get("type") == "indoor"])
             else:
                 prioritized.extend([rec for rec in recommendations if rec.get("type") == "outdoor"])

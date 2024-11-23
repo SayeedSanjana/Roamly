@@ -66,8 +66,14 @@ class AuthService:
         if not check_password_hash(user['password'], password):
             return {"error": "Invalid credentials"}, 401
 
-        # Create JWT access token
-        access_token = create_access_token(identity=str(user['_id']), expires_delta=datetime.timedelta(days=1))
+        # Create JWT access token with additional claims
+        access_token = create_access_token(
+            identity=str(user['_id']),
+            additional_claims={
+                "name": user['name']
+            },
+            expires_delta=datetime.timedelta(days=1)
+        )
 
         return {
             "message": "Login successful",

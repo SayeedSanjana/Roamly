@@ -1,5 +1,5 @@
 ####
-@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMTIwNjQzMCwianRpIjoiMjdjNmRjYzEtNmMwMC00NGQ4LTgwODgtM2M2Nzg1Y2RiNzFjIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY3MmIxZjAxMDJhMTlkMWYyMGE5OGRlNCIsIm5iZiI6MTczMTIwNjQzMCwiY3NyZiI6IjBlMWNkZjEyLTcyMzQtNGJmZi1hZGVjLTc0OTM1ZDU3NmY0OCIsImV4cCI6MTczMTI5MjgzMH0.B4SP_NZUvToS4MB3Ps7J7yGzPertiEvJAQufCNgxKEs
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMjI1NzI2NiwianRpIjoiZmJkNjI5YWEtN2UzOC00ZDlkLWE0MmEtY2FlMzUzMzk2ZWI1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY3MmIxZjAxMDJhMTlkMWYyMGE5OGRlNCIsIm5iZiI6MTczMjI1NzI2NiwiY3NyZiI6IjkwYzdlODhlLWJhNTItNDNkZi04ZGFmLTY0YmVhZTNkN2Q2YyIsImV4cCI6MTczMjM0MzY2NiwibmFtZSI6IkphbmUgRG9lIn0.ZcCvWEyE-P62bDDMJzc6E4ZeJnvN5GNT0QY8ZOD6Y4k
 #####
 
 POST http://127.0.0.1:5000/user/update_profile 
@@ -8,7 +8,7 @@ Content-Type: application/json
 
 {
     
-    "cuisines": ["Italian", "Mexican","Indian","French", "Canadian", "Breakfast","Brunch"],
+    "cuisines": ["Italian", "Mexican","Indian","French", "Canadian", "Breakfast","Brunch","Chinese"],
     "indoor_activities": ["Reading", "Gaming","Dancing", "Museums", "Art Exhibitions", "Karaoke"],
     "outdoor_activities": ["Hiking", "Cycling","Parks", "Picnics", "Boat Rides"],
     "visited_places": [],
