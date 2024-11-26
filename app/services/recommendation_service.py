@@ -230,7 +230,7 @@ class RecommendationService:
         nearby_recommendations = []
         for rec in recommendations:
             distance = haversine(lat1, lon1, rec["latitude"], rec["longitude"])
-            if distance <= 10:
+            if distance <= 5:
                 rec["distance"] = round(distance, 2)  # Add distance to each recommendation
                 # Ensure address is included in the recommendation
                 rec["address"] = rec.get("address", "Address not available")
