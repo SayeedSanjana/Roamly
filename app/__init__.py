@@ -10,13 +10,15 @@ from app.utils.scheduler import start_scheduler  # Import the scheduler function
 
 # Initialize db as None at the module level
 db = None
-socketio = SocketIO()  # Initialize SocketIO
+# socketio = SocketIO()  # Initialize SocketIO
+socketio = SocketIO(cors_allowed_origins=["http://localhost:5173", "http://localhost:5174"])
 
 def create_app():
     global db
     app = Flask(__name__)
-    CORS(app)
-    # Setup JWT
+    # CORS(app)
+    CORS(app, resources={r"/*": {"origins": ["http://localhost:5173", "http://localhost:5174"]}}, supports_credentials=True)
+
     jwt = JWTManager(app)
 
     # Load configuration
@@ -58,9 +60,9 @@ def create_app():
    # Attach Socket.IO to the Flask app
     socketio.init_app(app)
     # Attach Socket.IO to the Flask app
-    socketio.init_app(app)
+    # socketio.init_app(app)
 
-    # Define the join room event to assign the client to a room based on user_id
+    # # Define the join room event to assign the client to a room based on user_id
     @socketio.on("join_room")
     def on_join(data):
         user_id = data["userId"]

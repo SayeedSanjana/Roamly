@@ -52,7 +52,7 @@ class RecommendationService:
             logging.info(f"Updated context for user {user_id} in the database.")
 
             # Emit notification to the specific user's room
-            message = "Your recommendations have been updated based on your new context."
+            message = "Your recommendations have been updated!!!"
             logging.info(f"Emitting notification for user {user_id}: {message}")
             self.socketio.emit(
                 'notification',

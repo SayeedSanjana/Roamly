@@ -3,8 +3,8 @@ POST http://127.0.0.1:5000/auth/login
 Content-Type: application/json
 
 {
-    "email": "janen@example.com",
-    "password": "password1234"
+    "email": "jonathan@example.com",
+    "password": "jonathan1234"
 }
 
 ### Sign-up request
